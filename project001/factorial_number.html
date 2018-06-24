@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-    <title>Palindrome String</title>
+    <title>Factorial number</title>
 
     <!-- Bootstrap CSS CDN -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
@@ -53,14 +53,14 @@
 
             <ul class="list-unstyled components">
                 <!--<p>Dummy Heading</p>-->
-                <li class="active">
-                    <a href="#">PALINDROME PROGRAM</a>
+                <li>
+                    <a href="./palindrome_string.html">PALINDROME PROGRAM</a>
                 </li>
                 <li>
                     <a href="./fibonacci_series.html">FIBONACCI SERIES</a>
                 </li>
-                <li>
-                    <a href="./factorial_number.html">FACTORIAL NUMBER</a>
+                <li class="active">
+                    <a href="#">FACTORIAL NUMBER</a>
                 </li>
                 <li>
                     <a href="./buble_sort.html">BUBLE SORT</a>
@@ -94,9 +94,9 @@
 
 
           <div class="articles w3-large">
-            <div class="question"><h2>Palindrome String</h2></div><br>
+            <div class="question"><h2>Program for factorial of a number</h2></div><br>
             <div class="description"><strong>Description</strong><br>
-                  &nbsp;&nbsp;&nbsp;&nbsp;A string is said to be palindrome if reverse of the string is same as string. For example, "abba" is palindrome, but "abbc" is not palindrome.</div>
+                  &nbsp;&nbsp;&nbsp;&nbsp;Factorial of a non-negative integer, is multiplication of all integers smaller than or equal to n. For example factorial of 6 is 6*5*4*3*2*1 which is 720.</div>
             <div class="code-container container mt-3">
               <ul class="nav nav-tabs w3-border">
                 <li class="nav-item">
@@ -113,44 +113,29 @@
                   <div class="code_area w3-light-grey">
                   <pre id="code_containts">
                     <code class="prettyprint devsite-code-highlight linenums">
-#include &lt;stdio.h&gt;
-#include &lt;string.h&gt;
+  #include &lt;stdio.h&gt;
 
-// A function to check if a string str is palindrome
-void isPalindrome(char str[])
-{
-// Start from leftmost and rightmost corners of str
-    int l = 0;
-    int h = strlen(str) - 1;
+  // function to find factorial of given number
+  unsigned int factorial(unsigned int n)
+  {
+      int res = 1, i;
+      for (i=2; i<=n; i++)
+          res *= i;
+      return res;
+  }
 
-    // Keep comparing characters while they are same
-    while (h > l)
-    {
-        if (str[l++] != str[h--])
-        {
-            printf("%s is Not Palindrome", str);
-            return;
-          }
-    }
-    printf("%s is palindrome", str);
-}
-
-// Driver program to test above function
-int main()
-{
-    isPalindrome("abba");
-    isPalindrome("abbccbba");
-    isPalindrome("abcd");
-    return 0;
-}              </code>
+  int main()
+  {
+      int num = 5;
+      printf("Factorial of %d is %d", num, factorial(num));
+      return 0;
+  }              </code>
                   </pre>
                 </div>
                   <div class="output w3-container w3-teal w3-pale-yellow w3-leftbar w3-border-yellow">
                     <div class="output_head w3-large">OUTPUT</div>
                     <div class="output_body w3-medium">
-                      abba is palindrome<br>
-abbccbba is palindrome<br>
-abcd is Not palindrome<br>
+                      Factorial of 5 is 120
                     </div>
                   </div>
                 </div>
@@ -158,29 +143,24 @@ abcd is Not palindrome<br>
                   <div class="code_area w3-light-grey">
                   <pre id="code_containts">
                     <code class="prettyprint lang-java linenums">
-  public class Palindrome {
+// Java program to find factorial of given number
+class Test
+{
+    // Method to find factorial of given number
+    static int factorial(int n)
+    {
+        int res = 1, i;
+        for (i=2; i<=n; i++)
+            res *= i;
+        return res;
+    }
 
-	public static void main(String[] args) {
-		// TODO Auto-generated method stub
-		is_plaindrome("abba");
-		is_plaindrome("abbccbba");
-		is_plaindrome("abcd");
-
-
-
-	}
-	public static void is_plaindrome(String str) {
-
-		String rev_str = new StringBuffer(str).reverse().toString();
-		System.out.print(str + " is ");
-		if(str.equals(rev_str))
-			System.out.println("palindrome");
-		else
-			System.out.println("Not palindrome");
-
-
-	}
-
+    // Driver method
+    public static void main(String[] args)
+    {
+        int num = 5;
+        System.out.println("Factorial of "+ num + " is " + factorial(5));
+    }
 }
 
                     </code>
@@ -189,9 +169,7 @@ abcd is Not palindrome<br>
                   <div class="output w3-container w3-teal w3-pale-yellow w3-leftbar w3-border-yellow">
                     <div class="output_head w3-large">OUTPUT</div>
                     <div class="output_body w3-medium">
-                      abba is palindrome<br>
-abbccbba is palindrome<br>
-abcd is Not palindrome<br>
+                      Factorial of 5 is 120
                     </div>
                   </div>
                 </div>

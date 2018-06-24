@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-    <title>Palindrome String</title>
+    <title>Bubble Sort</title>
 
     <!-- Bootstrap CSS CDN -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
@@ -53,8 +53,8 @@
 
             <ul class="list-unstyled components">
                 <!--<p>Dummy Heading</p>-->
-                <li class="active">
-                    <a href="#">PALINDROME PROGRAM</a>
+                <li>
+                    <a href="./palindrome_string.html">PALINDROME PROGRAM</a>
                 </li>
                 <li>
                     <a href="./fibonacci_series.html">FIBONACCI SERIES</a>
@@ -62,8 +62,8 @@
                 <li>
                     <a href="./factorial_number.html">FACTORIAL NUMBER</a>
                 </li>
-                <li>
-                    <a href="./buble_sort.html">BUBLE SORT</a>
+                <li class="active">
+                    <a href="#">BUBLE SORT</a>
                 </li>
                 <li>
                     <a href="./find_3rd_largest_number_inanarray.html">FIND 3RD LARGEST NUMBER IN AN ARRAY</a>
@@ -94,9 +94,28 @@
 
 
           <div class="articles w3-large">
-            <div class="question"><h2>Palindrome String</h2></div><br>
+            <div class="question"><h2>Bubble Sort</h2></div><br>
             <div class="description"><strong>Description</strong><br>
-                  &nbsp;&nbsp;&nbsp;&nbsp;A string is said to be palindrome if reverse of the string is same as string. For example, "abba" is palindrome, but "abbc" is not palindrome.</div>
+                  Bubble Sort is the simplest sorting algorithm that works by repeatedly swapping the adjacent elements if they are in wrong order.<br>
+                  <strong>Example:<br>First Pass:</strong><br>
+                    ( 5 1 4 2 8 ) –> ( 1 5 4 2 8 ), Here, algorithm compares the first two elements, and swaps since 5 > 1.<br>
+  ( 1 5 4 2 8 ) –>  ( 1 4 5 2 8 ), Swap since 5 > 4<br>
+  ( 1 4 5 2 8 ) –>  ( 1 4 2 5 8 ), Swap since 5 > 2<br>
+  ( 1 4 2 5 8 ) –> ( 1 4 2 5 8 ), Now, since these elements are already in order (8 > 5), algorithm does not swap them.<br><br>
+  <strong>Second Pass:</strong><br>
+( 1 4 2 5 8 ) –> ( 1 4 2 5 8 )<br>
+( 1 4 2 5 8 ) –> ( 1 2 4 5 8 ), Swap since 4 > 2<br>
+( 1 2 4 5 8 ) –> ( 1 2 4 5 8 )<br>
+( 1 2 4 5 8 ) –>  ( 1 2 4 5 8 )<br>
+Now, the array is already sorted, but our algorithm does not know if it is completed. The algorithm needs one whole pass without any swap to know it is sorted.<br><br>
+<strong>Third Pass:</strong><br>
+( 1 2 4 5 8 ) –> ( 1 2 4 5 8 )<br>
+( 1 2 4 5 8 ) –> ( 1 2 4 5 8 )<br>
+( 1 2 4 5 8 ) –> ( 1 2 4 5 8 )<br>
+( 1 2 4 5 8 ) –> ( 1 2 4 5 8 )<br><br>
+
+
+                </div>
             <div class="code-container container mt-3">
               <ul class="nav nav-tabs w3-border">
                 <li class="nav-item">
@@ -113,44 +132,54 @@
                   <div class="code_area w3-light-grey">
                   <pre id="code_containts">
                     <code class="prettyprint devsite-code-highlight linenums">
-#include &lt;stdio.h&gt;
-#include &lt;string.h&gt;
+  // C program for implementation of Bubble sort
+  #include &lt;stdio.h&gt;
 
-// A function to check if a string str is palindrome
-void isPalindrome(char str[])
-{
-// Start from leftmost and rightmost corners of str
-    int l = 0;
-    int h = strlen(str) - 1;
+  void swap(int *xp, int *yp)
+  {
+      int temp = *xp;
+      *xp = *yp;
+      *yp = temp;
+  }
 
-    // Keep comparing characters while they are same
-    while (h > l)
-    {
-        if (str[l++] != str[h--])
-        {
-            printf("%s is Not Palindrome", str);
-            return;
-          }
-    }
-    printf("%s is palindrome", str);
-}
+  // A function to implement bubble sort
+  void bubbleSort(int arr[], int n)
+  {
+     int i, j;
+     for (i = 0; i < n-1; i++)
 
-// Driver program to test above function
-int main()
-{
-    isPalindrome("abba");
-    isPalindrome("abbccbba");
-    isPalindrome("abcd");
-    return 0;
-}              </code>
+         // Last i elements are already in place
+         for (j = 0; j < n-i-1; j++)
+             if (arr[j] > arr[j+1])
+                swap(&arr[j], &arr[j+1]);
+  }
+
+  /* Function to print an array */
+  void printArray(int arr[], int size)
+  {
+      int i;
+      for (i=0; i < size; i++)
+          printf("%d ", arr[i]);
+      printf("n");
+  }
+
+  // Driver program to test above functions
+  int main()
+  {
+      int arr[] = {64, 34, 25, 12, 22, 11, 90};
+      int n = sizeof(arr)/sizeof(arr[0]);
+      bubbleSort(arr, n);
+      printf("Sorted array: \n");
+      printArray(arr, n);
+      return 0;
+  }            </code>
                   </pre>
                 </div>
                   <div class="output w3-container w3-teal w3-pale-yellow w3-leftbar w3-border-yellow">
                     <div class="output_head w3-large">OUTPUT</div>
                     <div class="output_body w3-medium">
-                      abba is palindrome<br>
-abbccbba is palindrome<br>
-abcd is Not palindrome<br>
+                      Sorted array:<br>
+11 12 22 25 34 64 90
                     </div>
                   </div>
                 </div>
@@ -158,29 +187,41 @@ abcd is Not palindrome<br>
                   <div class="code_area w3-light-grey">
                   <pre id="code_containts">
                     <code class="prettyprint lang-java linenums">
-  public class Palindrome {
+// Java program for implementation of Bubble Sort
+class BubbleSort
+{
+    void bubbleSort(int arr[])
+    {
+        int n = arr.length;
+        for (int i = 0; i < n-1; i++)
+            for (int j = 0; j < n-i-1; j++)
+                if (arr[j] > arr[j+1])
+                {
+                    // swap temp and arr[i]
+                    int temp = arr[j];
+                    arr[j] = arr[j+1];
+                    arr[j+1] = temp;
+                }
+    }
 
-	public static void main(String[] args) {
-		// TODO Auto-generated method stub
-		is_plaindrome("abba");
-		is_plaindrome("abbccbba");
-		is_plaindrome("abcd");
+    /* Prints the array */
+    void printArray(int arr[])
+    {
+        int n = arr.length;
+        for (int i=0; i&lt;n; ++i)
+            System.out.print(arr[i] + " ");
+        System.out.println();
+    }
 
-
-
-	}
-	public static void is_plaindrome(String str) {
-
-		String rev_str = new StringBuffer(str).reverse().toString();
-		System.out.print(str + " is ");
-		if(str.equals(rev_str))
-			System.out.println("palindrome");
-		else
-			System.out.println("Not palindrome");
-
-
-	}
-
+    // Driver method to test above
+    public static void main(String args[])
+    {
+        BubbleSort ob = new BubbleSort();
+        int arr[] = {64, 34, 25, 12, 22, 11, 90};
+        ob.bubbleSort(arr);
+        System.out.println("Sorted array");
+        ob.printArray(arr);
+    }
 }
 
                     </code>
@@ -189,9 +230,8 @@ abcd is Not palindrome<br>
                   <div class="output w3-container w3-teal w3-pale-yellow w3-leftbar w3-border-yellow">
                     <div class="output_head w3-large">OUTPUT</div>
                     <div class="output_body w3-medium">
-                      abba is palindrome<br>
-abbccbba is palindrome<br>
-abcd is Not palindrome<br>
+                      Sorted array:<br>
+11 12 22 25 34 64 90
                     </div>
                   </div>
                 </div>

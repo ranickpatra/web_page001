@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-    <title>Palindrome String</title>
+    <title>FIND 3RD LARGEST NUMBER IN AN ARRAY</title>
 
     <!-- Bootstrap CSS CDN -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
@@ -53,8 +53,8 @@
 
             <ul class="list-unstyled components">
                 <!--<p>Dummy Heading</p>-->
-                <li class="active">
-                    <a href="#">PALINDROME PROGRAM</a>
+                <li>
+                    <a href="./palindrome_string.html">PALINDROME PROGRAM</a>
                 </li>
                 <li>
                     <a href="./fibonacci_series.html">FIBONACCI SERIES</a>
@@ -65,8 +65,8 @@
                 <li>
                     <a href="./buble_sort.html">BUBLE SORT</a>
                 </li>
-                <li>
-                    <a href="./find_3rd_largest_number_inanarray.html">FIND 3RD LARGEST NUMBER IN AN ARRAY</a>
+                <li class="active">
+                    <a href="#">FIND 3RD LARGEST NUMBER IN AN ARRAY</a>
                 </li>
             </ul>
         </nav>
@@ -94,9 +94,14 @@
 
 
           <div class="articles w3-large">
-            <div class="question"><h2>Palindrome String</h2></div><br>
+            <div class="question"><h2>Third largest element in an array of distinct element</h2></div><br>
             <div class="description"><strong>Description</strong><br>
-                  &nbsp;&nbsp;&nbsp;&nbsp;A string is said to be palindrome if reverse of the string is same as string. For example, "abba" is palindrome, but "abbc" is not palindrome.</div>
+                  &nbsp;&nbsp;&nbsp;&nbsp;Given an array of distinct elements, find third largest element in it.<br>
+                  <strong>Example :</strong><br>
+Input  : arr[] = {1, 14, 2, 16, 10, 20}<br>
+Output : The third Largest element is 14 <br><br>
+Simplest way to solve this question is to first iterate through the array and find first maximum. Store this first maximum as well as its index. Now traverse the whole array finding the second max with the changed condition. Finally traverse the array third time and find the third largest element.<br>
+                </div>
             <div class="code-container container mt-3">
               <ul class="nav nav-tabs w3-border">
                 <li class="nav-item">
@@ -113,44 +118,54 @@
                   <div class="code_area w3-light-grey">
                   <pre id="code_containts">
                     <code class="prettyprint devsite-code-highlight linenums">
-#include &lt;stdio.h&gt;
-#include &lt;string.h&gt;
+  // C program to find third Largest element in an array
+  // of distinct elements
+  #include &lt;bits/stdc++.h&gt;
 
-// A function to check if a string str is palindrome
-void isPalindrome(char str[])
-{
-// Start from leftmost and rightmost corners of str
-    int l = 0;
-    int h = strlen(str) - 1;
+  void thirdLargest(int arr[], int arr_size)
+  {
+      /* There should be atleast three elements */
+      if (arr_size &lt; 3)
+      {
+          printf(" Invalid Input ");
+          return;
+      }
 
-    // Keep comparing characters while they are same
-    while (h > l)
-    {
-        if (str[l++] != str[h--])
-        {
-            printf("%s is Not Palindrome", str);
-            return;
-          }
-    }
-    printf("%s is palindrome", str);
-}
+      // Find first largest element
+      int first = arr[0];
+      for (int i = 1; i < arr_size ; i++)
+          if (arr[i] > first)
+              first = arr[i];
 
-// Driver program to test above function
-int main()
-{
-    isPalindrome("abba");
-    isPalindrome("abbccbba");
-    isPalindrome("abcd");
-    return 0;
-}              </code>
+      // Find second largest element
+      int second = INT_MIN;
+      for (int i = 0; i < arr_size ; i++)
+          if (arr[i] > second && arr[i] < first)
+              second = arr[i];
+
+      // Find third largest element
+      int third = INT_MIN;
+      for (int i = 0; i < arr_size ; i++)
+          if (arr[i] > third && arr[i] < second)
+              third = arr[i];
+
+      printf("The third Largest element is %d\n", third);
+  }
+
+  /* Driver program to test above function */
+  int main()
+  {
+      int arr[] = {12, 13, 1, 10, 34, 16};
+      int n = sizeof(arr)/sizeof(arr[0]);
+      thirdLargest(arr, n);
+      return 0;
+  }             </code>
                   </pre>
                 </div>
                   <div class="output w3-container w3-teal w3-pale-yellow w3-leftbar w3-border-yellow">
                     <div class="output_head w3-large">OUTPUT</div>
                     <div class="output_body w3-medium">
-                      abba is palindrome<br>
-abbccbba is palindrome<br>
-abcd is Not palindrome<br>
+                      The third Largest element is 13
                     </div>
                   </div>
                 </div>
@@ -158,40 +173,74 @@ abcd is Not palindrome<br>
                   <div class="code_area w3-light-grey">
                   <pre id="code_containts">
                     <code class="prettyprint lang-java linenums">
-  public class Palindrome {
+
+//JAVA program to find third Largest element in an array
+// of distinct elements
+public class thirdlargestnumber {
 
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
-		is_plaindrome("abba");
-		is_plaindrome("abbccbba");
-		is_plaindrome("abcd");
 
+		int[] arr = {12, 13, 1, 10, 34, 16};
 
+		if(arr.length < 3) {
+			System.out.println("invalid input");
+		}
 
-	}
-	public static void is_plaindrome(String str) {
-
-		String rev_str = new StringBuffer(str).reverse().toString();
-		System.out.print(str + " is ");
-		if(str.equals(rev_str))
-			System.out.println("palindrome");
-		else
-			System.out.println("Not palindrome");
-
+		new ThirdLarge(arr).thirdLarge();;
 
 	}
+
+
+
+	private static class ThirdLarge {
+
+		private int[] arr;
+
+		public ThirdLarge(int[] arr) {
+			this.arr = arr;
+		}
+
+		public void thirdLarge() {
+
+			/* There should be atleast three elements */
+			if(arr.length < 3) {
+				System.out.println("Invalid input");
+				return;
+			}
+
+			// Find first largest element
+		      int first = arr[0];
+		      for (int i = 1; i < arr.length ; i++)
+		          if (arr[i] > first)
+		              first = arr[i];
+
+		      // Find second largest element
+		      int second = Integer.MIN_VALUE;
+		      for (int i = 0; i < arr.length ; i++)
+		          if (arr[i] > second && arr[i] < first)
+		              second = arr[i];
+
+		      // Find third largest element
+		      int third = Integer.MIN_VALUE;
+		      for (int i = 0; i < arr.length ; i++)
+		          if (arr[i] > third && arr[i] < second)
+		              third = arr[i];
+
+		      System.out.println("The third Largest element is " + third);
+
+		}
+
+	}
+
 
 }
-
                     </code>
                   </pre>
                 </div>
                   <div class="output w3-container w3-teal w3-pale-yellow w3-leftbar w3-border-yellow">
                     <div class="output_head w3-large">OUTPUT</div>
                     <div class="output_body w3-medium">
-                      abba is palindrome<br>
-abbccbba is palindrome<br>
-abcd is Not palindrome<br>
+                      The third Largest element is 13
                     </div>
                   </div>
                 </div>
