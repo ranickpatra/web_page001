@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <title>Collapsible sidebar using Bootstrap 4</title>
+
+    <!-- Bootstrap CSS CDN -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
+    <!-- Our Custom CSS -->
+    <link rel="stylesheet" href="styles/style_sidebar.css">
+
+    <!-- Font Awesome JS -->
+    <script defer src="https://use.fontawesome.com/releases/v5.0.13/js/solid.js" integrity="sha384-tzzSw1/Vo+0N5UhStP3bvwWPq+uvzCMfrN1fEFe+xBmv1C/AtVX5K0uZtmcHitFZ" crossorigin="anonymous"></script>
+    <script defer src="https://use.fontawesome.com/releases/v5.0.13/js/fontawesome.js" integrity="sha384-6OIrr52G08NpOFSZdxxz1xdNSndlD4vdcf/q2myIUVO0VsqaGHJsB0RaBE01VTOY" crossorigin="anonymous"></script>
+
+
+
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <meta charset="utf-8">
+    <!-- W3CSS SECTION -->
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <!-- BOOTSTRAP4 SECTION -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"></script>
+    <!-- syntax hiliting -->
+    <script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js"></script>
+
+    <link rel="stylesheet" href="./styles/style01.css">
+    <link rel="stylesheet" href="./styles/style02.css">
+
+    <script type="text/javascript" src="./javascript/script001.js"></script>
+
+
+
+
+</head>
+
+<body>
+    <div class="wrapper">
+        <!-- Sidebar  -->
+        <nav id="sidebar">
+            <div class="sidebar-header">
+                <h3>Heading</h3>
+            </div>
+
+            <ul class="list-unstyled components">
+                <!--<p>Dummy Heading</p>-->
+                <li class="active">
+                    <a href="#">PALINDROME PROGRAAM</a>
+                </li>
+                <li>
+                    <a href="#">FIBONACCI SERIES</a>
+                </li>
+                <li>
+                    <a href="#">FACTORIAL NUMBER</a>
+                </li>
+                <li>
+                    <a href="#">BUBLE SORT</a>
+                </li>
+                <li>
+                    <a href="#">FIND 3RD LARGEST NUMBER IN AN ARRAY</a>
+                </li>
+            </ul>
+        </nav>
+
+        <!-- Page Content  -->
+        <div id="content">
+<!--
+            <nav class="navbar navbar-expand-lg navbar-light bg-light">
+                <div class="container-fluid">
+
+                    <button type="button" id="sidebarCollapse" class="btn btn-info">
+                        <i class="fas fa-align-left"></i>
+                        <span>Toggle Sidebar</span>
+                    </button>
+
+
+
+                </div> -->
+
+                <button type="button" id="sidebarCollapse" class="btn btn-info">
+                    <i class="fas fa-align-left"></i>
+                    <span>Toggle Sidebar</span>
+                </button>
+            </nav>
+
+
+          <div class="articles w3-large">
+            <div class="question"><h2>Palindrome String</h2></div><br>
+            <div class="description"><strong>Description</strong><br>
+                  &nbsp;&nbsp;&nbsp;&nbsp;A string is said to be palindrome if reverse of the string is same as string. For example, "abba" is palindrome, but "abbc" is not palindrome.</div>
+            <div class="code-container container mt-3">
+              <ul class="nav nav-tabs w3-border">
+                <li class="nav-item">
+                  <a class="nav-link active" data-toggle="tab" href="#c_lang_1">C</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" data-toggle="tab" href="#java_lang_1">JAVA</a>
+                </li>
+              </ul>
+
+              <!-- Tab panes -->
+              <div class="tab-content">
+                <div class="tab-pane active container" id="c_lang_1">
+                  <div class="code_area w3-light-grey">
+                  <pre id="code_containts">
+                    <code class="prettyprint devsite-code-highlight linenums">
+#include &lt;stdio.h&gt;
+#include &lt;string.h&gt;
+
+// A function to check if a string str is palindrome
+void isPalindrome(char str[])
+{
+// Start from leftmost and rightmost corners of str
+    int l = 0;
+    int h = strlen(str) - 1;
+
+    // Keep comparing characters while they are same
+    while (h > l)
+    {
+        if (str[l++] != str[h--])
+        {
+            printf("%s is Not Palindrome", str);
+            return;
+          }
+    }
+    printf("%s is palindrome", str);
+}
+
+// Driver program to test above function
+int main()
+{
+    isPalindrome("abba");
+    isPalindrome("abbccbba");
+    isPalindrome("geeks");
+    return 0;
+}              </code>
+                  </pre>
+                </div>
+                  <div class="output w3-container w3-teal w3-pale-yellow w3-leftbar w3-border-yellow">
+                    <div class="output_head w3-large">OUTPUT</div>
+                    <div class="output_body w3-medium">
+                      abba is palindrome<br> abbccbba is palindrome<br> geeks is Not Palindrome<br>
+                    </div>
+                  </div>
+                </div>
+                <div class="tab-pane container" id="java_lang_1">
+                  <div class="code_area w3-light-grey">
+                  <pre id="code_containts">
+                    <code class="prettyprint lang-java linenums">
+// Java program to illustrate checking of a string
+// if its palindrome or not using reverse function
+class Palindrome
+{
+    public static void checkPalindrome(String s)
+    {
+        // reverse the given String
+        String reverse = new StringBuffer(s).reverse().toString();
+
+        // check whether the string is palindrome or not
+        if (s.equals(reverse))
+        System.out.println("Yes");
+
+        else
+        System.out.println("No");
+    }
+
+    public static void main (String[] args) throws java.lang.Exception
+    {
+        checkPalindrome("malayalam");
+        checkPalindrome("GeeksforGeeks");
+    }
+}
+
+                    </code>
+                  </pre>
+                </div>
+                  <div class="output w3-container w3-teal w3-pale-yellow w3-leftbar w3-border-yellow">
+                    <div class="output_head w3-large">OUTPUT</div>
+                    <div class="output_body w3-medium">
+                      Yes<br>No
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+
+            </div>
+          </div>
+
+
+
+
+
+
+        </div>
+    </div>
+
+    <!-- jQuery CDN - Slim version (=without AJAX) -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <!-- Popper.JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js" integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ" crossorigin="anonymous"></script>
+    <!-- Bootstrap JS -->
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js" integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm" crossorigin="anonymous"></script>
+
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $('#sidebarCollapse').on('click', function () {
+                $('#sidebar').toggleClass('active');
+            });
+        });
+    </script>
+</body>
+
+</html>

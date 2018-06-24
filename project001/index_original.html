@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Index page</title>
+
+  <!-- JQUERY -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <meta charset="utf-8">
+  <!-- W3CSS SECTION -->
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+  <!-- BOOTSTRAP4 SECTION -->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"></script>
+  <!-- syntax hiliting -->
+  <script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js"></script>
+
+  <link rel="stylesheet" href="./styles/style01.css">
+  <link rel="stylesheet" href="./styles/style02.css">
+
+  <script type="text/javascript" src="./javascript/script001.js"></script>
+
+
+</head>
+
+
+<body>
+
+
+
+
+  <div class="main_container w3-medium">
+
+
+
+
+
+    <div class="articles w3-large">
+      <div class="question"><h2>Palindrome String</h2></div><br>
+      <div class="description"><strong>Description</strong><br>
+          	&nbsp;&nbsp;&nbsp;&nbsp;A string is said to be palindrome if reverse of the string is same as string. For example, "abba" is palindrome, but "abbc" is not palindrome.</div>
+      <div class="code-container container mt-3">
+        <ul class="nav nav-tabs w3-border">
+          <li class="nav-item">
+            <a class="nav-link active" data-toggle="tab" href="#c_lang_1">C</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" data-toggle="tab" href="#java_lang_1">JAVA</a>
+          </li>
+        </ul>
+
+        <!-- Tab panes -->
+        <div class="tab-content">
+          <div class="tab-pane active container" id="c_lang_1">
+            <div class="code_area w3-light-grey">
+            <pre id="code_containts">
+              <code class="prettyprint devsite-code-highlight linenums">
+#include &lt;stdio.h&gt;
+#include &lt;string.h&gt;
+
+// A function to check if a string str is palindrome
+void isPalindrome(char str[])
+{
+	// Start from leftmost and rightmost corners of str
+	int l = 0;
+	int h = strlen(str) - 1;
+
+	// Keep comparing characters while they are same
+	while (h > l)
+	{
+		if (str[l++] != str[h--])
+		{
+			printf("%s is Not Palindrome", str);
+			return;
+		}
+	}
+	printf("%s is palindrome", str);
+}
+
+// Driver program to test above function
+int main()
+{
+	isPalindrome("abba");
+	isPalindrome("abbccbba");
+	isPalindrome("geeks");
+	return 0;
+}              </code>
+            </pre>
+          </div>
+            <div class="output w3-container w3-teal w3-pale-yellow w3-leftbar w3-border-yellow">
+              <div class="output_head w3-large">OUTPUT</div>
+              <div class="output_body w3-medium">
+                abba is palindrome<br> abbccbba is palindrome<br> geeks is Not Palindrome<br>
+              </div>
+            </div>
+          </div>
+          <div class="tab-pane container" id="java_lang_1">
+            <div class="code_area w3-light-grey">
+            <pre id="code_containts">
+              <code class="prettyprint lang-java linenums">
+// Java program to illustrate checking of a string
+// if its palindrome or not using reverse function
+class Palindrome
+{
+public static void checkPalindrome(String s)
+{
+	// reverse the given String
+	String reverse = new StringBuffer(s).reverse().toString();
+
+	// check whether the string is palindrome or not
+	if (s.equals(reverse))
+	System.out.println("Yes");
+
+	else
+	System.out.println("No");
+}
+
+public static void main (String[] args)
+			throws java.lang.Exception
+{
+	checkPalindrome("malayalam");
+	checkPalindrome("GeeksforGeeks");
+}
+}
+
+              </code>
+            </pre>
+          </div>
+            <div class="output w3-container w3-teal w3-pale-yellow w3-leftbar w3-border-yellow">
+              <div class="output_head w3-large">OUTPUT</div>
+              <div class="output_body w3-medium">
+                Yes<br>No
+              </div>
+            </div>
+          </div>
+        </div>
+
+
+      </div>
+    </div>
+
+
+
+
+
+
+
+
+
+
+  </div>
+
+
+
+</body>
+
+
+</html>
