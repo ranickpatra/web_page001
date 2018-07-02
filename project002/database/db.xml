@@ -1,0 +1,3167 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<document>
+
+  <content id="0">
+    <title>"Hello, World!" Program</title>
+    <desc>A simple program to display "Hello, World!" on the screen. Since, it's a very simple program, it is often used to illustrate the syntax of a programming language.</desc>
+    <c_lang>
+      <code>
+#include &lt;stdio.h&gt;
+int main()
+{
+   // printf() displays the string inside quotation
+   printf("Hello, World!");
+   return 0;
+}
+
+      </code>
+      <out>Hello, World!</out>
+    </c_lang>
+    <cpp_lang>
+      <code>
+#include &lt;iostream&gt;
+using namespace std;
+
+int main()
+{
+    cout &lt;&lt; "Hello, World!";
+    return 0;
+}
+      </code>
+      <out>Hello, World!</out>
+    </cpp_lang>
+    <java_lang>
+      <code>
+public class HelloWorld {
+
+    public static void main(String[] args) {
+        // prints "Hello, World!"
+        System.out.println("Hello, World!");
+    }
+}
+      </code>
+      <out>Hello, World!</out>
+    </java_lang>
+  </content>
+
+
+  <content id="1">
+    <title>Program to Add Two Integers</title>
+    <desc>In this program, user is asked to enter two integers. Then, the sum of those two integers is stored in a variable and displayed on the screen.</desc>
+    <c_lang>
+      <code>
+#include &lt;stdio.h&gt;
+int main()
+{
+    int firstNumber, secondNumber, sumOfTwoNumbers;
+
+    printf("Enter two integers: ");
+
+    // Two integers entered by user is stored using scanf() function
+    scanf("%d %d", &amp;firstNumber, &amp;secondNumber);
+
+    // sum of two numbers in stored in variable sumOfTwoNumbers
+    sumOfTwoNumbers = firstNumber + secondNumber;
+
+    // Displays sum
+    printf("%d + %d = %d", firstNumber, secondNumber, sumOfTwoNumbers);
+
+    return 0;
+}
+      </code>
+      <out>
+Enter two integers: 12
+11
+12 + 11 = 23</out>
+    </c_lang>
+    <cpp_lang>
+      <code>
+#include &lt;iostream&gt;
+using namespace std;
+
+int main()
+{
+    int firstNumber, secondNumber, sumOfTwoNumbers;
+
+    cout &lt;&lt; "Enter two integers: ";
+    cin &gt;&gt; firstNumber &gt;&gt; secondNumber;
+
+    // sum of two numbers in stored in variable sumOfTwoNumbers
+    sumOfTwoNumbers = firstNumber + secondNumber;
+
+    // Prints sum
+    cout &lt;&lt; firstNumber &lt;&lt; " + " &lt;&lt;  secondNumber &lt;&lt; " = " &lt;&lt; sumOfTwoNumbers;
+
+    return 0;
+}
+      </code>
+      <out>
+Enter two integers: 4
+5
+4 + 5 = 9
+      </out>
+    </cpp_lang>
+    <java_lang>
+      <code>
+public class Sum {
+
+  public static void main(String[] args) {
+	// TODO Auto-generated method stub
+
+	int a = 0 ,b = 0 ,c;
+
+	System.out.println("Enter two integers: ");
+	BufferedReader input = new BufferedReader ( new InputStreamReader ( System.in ) );
+	try {
+		a = Integer.parseInt(input.readLine());
+		b = Integer.parseInt(input.readLine());
+	} catch (NumberFormatException e) {
+
+		e.printStackTrace();
+	} catch (IOException e) {
+
+		e.printStackTrace();
+	}
+
+	c = a + b;
+
+	System.out.println(a+" + "+b+" = "+c);
+
+  }
+}
+
+      </code>
+      <out>
+Enter two integers:
+10
+11
+10 + 11 = 21
+      </out>
+    </java_lang>
+  </content>
+
+
+  <content id="2">
+    <title>Program to Find Quotient and Remainder</title>
+    <desc>In this example, you will learn to find the quotient and remainder of a given dividend and divisor.&lt;br&gt;
+In this program, user is asked to enter two integers (divisor and dividend) and computes the quotient and remainder.
+&lt;br&gt;&lt;br&gt;
+To compute quotient and remainder, both divisor and dividend should be integers.
+    </desc>
+    <c_lang>
+      <code>
+#include &lt;stdio.h&gt;
+
+int main()
+{
+    int divisor, dividend, quotient, remainder;
+
+    printf("Enter dividend: ");
+    scanf("%d", &amp;dividend);
+
+    printf("Enter divisor: ");
+    scanf("%d", &amp;divisor);
+
+    quotient = dividend / divisor;
+    remainder = dividend % divisor;
+
+    printf("Quotient = %d\n", quotient);
+    printf("Remainder = %d", remainder);
+
+    return 0;
+}
+      </code>
+      <out>
+Enter dividend: 13
+Enter divisor: 4
+Quotient = 3
+Remainder = 1
+      </out>
+    </c_lang>
+    <cpp_lang>
+      <code>
+#include &lt;iostream&gt;
+using namespace std;
+
+int main()
+{
+    int divisor, dividend, quotient, remainder;
+
+    cout &lt;&lt; "Enter dividend: ";
+    cin &gt;&gt; dividend;
+
+    cout &lt;&lt; "Enter divisor: ";
+    cin &gt;&gt; divisor;
+
+    quotient = dividend / divisor;
+    remainder = dividend % divisor;
+
+    cout &lt;&lt; "Quotient = " &lt;&lt; quotient &lt;&lt; endl;
+    cout &lt;&lt; "Remainder = " &lt;&lt; remainder;
+
+    return 0;
+}
+      </code>
+      <out>
+Enter dividend: 13
+Enter divisor: 4
+Quotient = 3
+Remainder = 1
+      </out>
+    </cpp_lang>
+    <java_lang>
+      <code>
+import java.util.Scanner;
+
+public class DemoTranslation {
+
+	public final static Scanner STDIN_SCANNER = new Scanner(System.in);
+	public static void main(String[] args) {
+		int dividend, divisor, quotient, remainder;
+
+		System.out.print("Enter dividend: ");
+		dividend = STDIN_SCANNER.nextInt();
+
+		System.out.print("Enter divisor: ");
+		divisor = STDIN_SCANNER.nextInt();
+
+		// Computes quotient
+		quotient = dividend / divisor;
+
+		// Computes remainder
+		remainder = dividend % divisor;
+
+		System.out.println("Quotient = " + quotient);
+		System.out.print("Remainder = " + remainder);
+	}
+
+}
+      </code>
+      <out>
+Enter dividend: 13
+Enter divisor: 4
+Quotient = 3
+Remainder = 1
+      </out>
+    </java_lang>
+  </content>
+
+  <content id="3">
+    <title>Program to Swap Numbers Using Temporary Variable</title>
+    <desc>Here, temporaryVariable is used to hold the value of firstNumber and doesn't have any other use except that. You can also write the swapping program without using temporaryVariable.&lt;br&gt;&lt;br&gt;
+To perform swapping in below example, three variables are used.&lt;br&gt;&lt;br&gt;
+The contents of the first variable is copied into the temp variable. Then, the contents of second variable is copied to the first variable.&lt;br&gt;&lt;br&gt;
+Finally, the contents of the temp variable is copied back to the second variable which completes the swapping process.
+
+    </desc>
+    <c_lang>
+      <code>
+#include &lt;stdio.h&gt;
+int main()
+{
+      double firstNumber, secondNumber, temporaryVariable;
+
+      printf("Enter first number: ");
+      scanf("%lf", &amp;firstNumber);
+
+      printf("Enter second number: ");
+      scanf("%lf",&amp;secondNumber);
+
+      // Value of firstNumber is assigned to temporaryVariable
+      temporaryVariable = firstNumber;
+
+      // Value of secondNumber is assigned to firstNumber
+      firstNumber = secondNumber;
+
+      // Value of temporaryVariable (which contains the initial value of firstNumber) is assigned to secondNumber
+      secondNumber = temporaryVariable;
+
+      printf("\nAfter swapping, firstNumber = %.2lf\n", firstNumber);
+      printf("After swapping, secondNumber = %.2lf", secondNumber);
+
+      return 0;
+}
+      </code>
+      <out>
+Enter first number: 1.20
+Enter second number: 2.45
+
+After swapping, firstNumber = 2.45
+After swapping, secondNumber = 1.20
+      </out>
+    </c_lang>
+    <cpp_lang>
+      <code>
+#include &lt;iostream&gt;
+using namespace std;
+
+int main()
+{
+    int a = 5, b = 10, temp;
+
+    cout &lt;&lt; "Before swapping." &lt;&lt; endl;
+    cout &lt;&lt; "a = " &lt;&lt; a &lt;&lt; ", b = " &lt;&lt; b &lt;&lt; endl;
+
+    temp = a;
+    a = b;
+    b = temp;
+
+    cout &lt;&lt; "\nAfter swapping." &lt;&lt; endl;
+    cout &lt;&lt; "a = " &lt;&lt; a &lt;&lt; ", b = " &lt;&lt; b &lt;&lt; endl;
+
+    return 0;
+}
+      </code>
+      <out>
+Before swapping.
+a = 5, b = 10
+
+After swapping.
+a = 10, b = 5
+	</out>
+    </cpp_lang>
+    <java_lang>
+      <code>
+import java.util.Scanner;
+
+public class Swap {
+	public final static Scanner STDIN_SCANNER = new Scanner(System.in);
+	public static void main(String[] args) {
+		double firstNumber, secondNumber, temporaryVariable;
+
+		System.out.print("Enter first number: ");
+		firstNumber = STDIN_SCANNER.nextDouble();
+
+		System.out.print("Enter second number: ");
+		secondNumber = STDIN_SCANNER.nextDouble();
+
+		// Value of firstNumber is assigned to temporaryVariable
+		temporaryVariable = firstNumber;
+
+		// Value of secondNumber is assigned to firstNumber
+		firstNumber = secondNumber;
+
+		// Value of temporaryVariable (which contains the initial value of firstNumber) is assigned to secondNumber
+		secondNumber = temporaryVariable;
+
+		System.out.printf("\nAfter swapping, firstNumber = %.2f\n", firstNumber);
+		System.out.printf("After swapping, secondNumber = %.2f", secondNumber);
+	}
+
+}
+      </code>
+      <out>
+Enter first number: 1.20
+Enter second number: 2.45
+
+After swapping, firstNumber = 2.45
+After swapping, secondNumber = 1.20
+      </out>
+    </java_lang>
+  </content>
+
+  <content id="4">
+    <title>Swap Numbers Without Using Temporary Variables</title>
+    <desc>
+This example contains to swap numbers the program doesn't use temporary variables to swap two variables.
+    </desc>
+    <c_lang>
+      <code>
+#include &lt;stdio.h&gt;
+int main()
+{
+    double firstNumber, secondNumber;
+
+    printf("Enter first number: ");
+    scanf("%lf", &amp;firstNumber);
+
+    printf("Enter second number: ");
+    scanf("%lf",&amp;secondNumber);
+
+    // Swapping process
+
+    firstNumber = firstNumber - secondNumber;
+    secondNumber = firstNumber + secondNumber;
+    firstNumber = secondNumber - firstNumber;
+
+    printf("\nAfter swapping, firstNumber = %.2lf\n", firstNumber);
+    printf("After swapping, secondNumber = %.2lf", secondNumber);
+
+    return 0;
+}
+
+      </code>
+      <out>
+Enter first number: 10.25
+Enter second number: -12.5
+
+After swapping, firstNumber = -12.50
+After swapping, secondNumber = 10.25
+      </out>
+    </c_lang>
+    <cpp_lang>
+      <code>
+#include &lt;iostream&gt;
+using namespace std;
+
+int main()
+{
+
+    int a = 5, b = 10;
+
+    cout &lt;&lt; "Before swapping." &lt;&lt; endl;
+    cout &lt;&lt; "a = " &lt;&lt; a &lt;&lt; ", b = " &lt;&lt; b &lt;&lt; endl;
+
+    a = a + b;
+    b = a - b;
+    a = a - b;
+
+    cout &lt;&lt; "\nAfter swapping." &lt;&lt; endl;
+    cout &lt;&lt; "a = " &lt;&lt; a &lt;&lt; ", b = " &lt;&lt; b &lt;&lt; endl;
+
+    return 0;
+}
+      </code>
+      <out>
+Before swapping.
+a = 5, b = 10
+
+After swapping.
+a = 10, b = 5
+      </out>
+    </cpp_lang>
+    <java_lang>
+      <code>
+
+import java.util.Scanner;
+
+public class Swap {
+
+	public final static Scanner STDIN_SCANNER = new Scanner(System.in);
+	public static void main(String[] args) {
+		double firstNumber, secondNumber;
+
+		System.out.print("Enter first number: ");
+		firstNumber = STDIN_SCANNER.nextDouble();
+
+		System.out.print("Enter second number: ");
+		secondNumber = STDIN_SCANNER.nextDouble();
+
+		// Swapping process
+
+		firstNumber = firstNumber - secondNumber;
+		secondNumber = firstNumber + secondNumber;
+		firstNumber = secondNumber - firstNumber;
+
+		System.out.printf("\nAfter swapping, firstNumber = %.2f\n", firstNumber);
+		System.out.printf("After swapping, secondNumber = %.2f", secondNumber);
+	}
+
+
+}
+      </code>
+      <out>
+Enter first number: 10.25
+Enter second number: -12.5
+
+After swapping, firstNumber = -12.50
+After swapping, secondNumber = 10.25
+      </out>
+    </java_lang>
+  </content>
+
+  <content id="5">
+    <title>Check Whether a Number is Even or Odd</title>
+    <desc>In this example, if...else statement is used to check whether a number entered by the user is even or odd.&lt;br&gt;&lt;br&gt;
+Integers which are perfectly divisible by 2 are called even numbers.&lt;br&gt;&lt;br&gt;
+
+And those integers which are not perfectly divisible by 2 are not known as odd number.&lt;br&gt;&lt;br&gt;
+
+To check whether an integer is even or odd, the remainder is calculated when it is divided by 2 using modulus operator %. If remainder is zero, that integer is even if not that integer is odd.
+    An even number is an integer that is exactly divisible by 2. Example: 0, 8, -24&lt;br&gt;&lt;br&gt;
+An odd number is an integer that is not exactly divisible by 2. Example: 1, 7, -11, 15&lt;br&gt;&lt;br&gt;
+
+    </desc>
+    <c_lang>
+      <code>
+#include &lt;stdio.h&gt;
+int main()
+{
+    int number;
+
+    printf("Enter an integer: ");
+    scanf("%d", &amp;number);
+
+    // True if the number is perfectly divisible by 2
+    if(number % 2 == 0)
+        printf("%d is even.", number);
+    else
+        printf("%d is odd.", number);
+
+    return 0;
+}
+      </code>
+      <out>
+Enter an integer: 7
+7 is odd.
+      </out>
+    </c_lang>
+    <cpp_lang>
+      <code>
+#include &lt;iostream&gt;
+using namespace std;
+
+int main()
+{
+    int n;
+
+    cout &lt;&lt; "Enter an integer: ";
+    cin &gt;&gt; n;
+
+    if ( n % 2 == 0)
+        cout &lt;&lt; n &lt;&lt; " is even.";
+    else
+        cout &lt;&lt; n &lt;&lt; " is odd.";
+
+    return 0;
+}
+      </code>
+      <out>
+Enter an integer: 24
+24 is even.
+      </out>
+    </cpp_lang>
+    <java_lang>
+      <code>
+import java.util.Scanner;
+
+public class evenOdd {
+	public final static Scanner STDIN_SCANNER = new Scanner(System.in);
+	public static void main(String[] args) {
+		int number;
+
+		System.out.print("Enter an integer: ");
+		number = STDIN_SCANNER.nextInt();
+
+		// True if the number is perfectly divisible by 2
+		if(number % 2 == 0) {
+			System.out.print(number + " is even.");
+		} else {
+			System.out.print(number + " is odd.");
+		}
+	}
+
+
+}
+      </code>
+      <out>
+Enter an integer: 24
+24 is even.
+      </out>
+    </java_lang>
+  </content>
+
+  <content id="6">
+    <title>Check Whether a character is Vowel or Consonant</title>
+    <desc>
+In this example, if...else statement is used to check whether an alphabet entered by the user is a vowel or a constant.&lt;br&gt;&lt;br&gt;
+The five alphabets A, E, I, O and U are called vowels. All other alphabets except these 5 vowel letters are called consonants.&lt;br&gt;
+
+This program assumes that the user will always enter an alphabet character.
+    </desc>
+    <c_lang>
+      <code>
+#include &lt;stdio.h&gt;
+int main()
+{
+    char c;
+    int isLowercaseVowel, isUppercaseVowel;
+
+    printf("Enter an alphabet: ");
+    scanf("%c",&amp;c);
+
+    // evaluates to 1 (true) if c is a lowercase vowel
+    isLowercaseVowel = (c == 'a' || c == 'e' || c == 'i' || c == 'o' || c == 'u');
+
+    // evaluates to 1 (true) if c is an uppercase vowel
+    isUppercaseVowel = (c == 'A' || c == 'E' || c == 'I' || c == 'O' || c == 'U');
+
+    // evaluates to 1 (true) if either isLowercaseVowel or isUppercaseVowel is true
+    if (isLowercaseVowel || isUppercaseVowel)
+        printf("%c is a vowel.", c);
+    else
+        printf("%c is a consonant.", c);
+    return 0;
+}
+      </code>
+      <out>
+Enter an alphabet: G
+G is a consonant.
+      </out>
+    </c_lang>
+    <cpp_lang>
+      <code>
+#include &lt;iostream&gt;
+using namespace std;
+
+int main()
+{
+    char c;
+    int isLowercaseVowel, isUppercaseVowel;
+
+    cout &lt;&lt; "Enter an alphabet: ";
+    cin &gt;&gt; c;
+
+    // evaluates to 1 (true) if c is a lowercase vowel
+    isLowercaseVowel = (c == 'a' || c == 'e' || c == 'i' || c == 'o' || c == 'u');
+
+    // evaluates to 1 (true) if c is an uppercase vowel
+    isUppercaseVowel = (c == 'A' || c == 'E' || c == 'I' || c == 'O' || c == 'U');
+
+    // evaluates to 1 (true) if either isLowercaseVowel or isUppercaseVowel is true
+    if (isLowercaseVowel || isUppercaseVowel)
+        cout &lt;&lt; c &lt;&lt; " is a vowel.";
+    else
+        cout &lt;&lt; c &lt;&lt; " is a consonant.";
+
+    return 0;
+}
+      </code>
+      <out>
+Enter an alphabet: u
+u is a vowel.
+      </out>
+    </cpp_lang>
+    <java_lang>
+      <code>
+package demo;
+
+import java.util.Scanner;
+
+public class vowel {
+
+	public final static Scanner STDIN_SCANNER = new Scanner(System.in);
+	public static void main(String[] args) {
+		byte c;
+		boolean isLowercaseVowel, isUppercaseVowel;
+
+		System.out.print("Enter an alphabet: ");
+		c = (byte)nextChar(STDIN_SCANNER);
+
+		// evaluates to 1 (true) if c is a lowercase vowel
+		isLowercaseVowel = c == 'a' || c == 'e' || c == 'i' || c == 'o' || c == 'u';
+
+		// evaluates to 1 (true) if c is an uppercase vowel
+		isUppercaseVowel = c == 'A' || c == 'E' || c == 'I' || c == 'O' || c == 'U';
+
+		// evaluates to 1 (true) if either isLowercaseVowel or isUppercaseVowel is true
+		if(isLowercaseVowel || isUppercaseVowel) {
+			System.out.print(((char)Byte.toUnsignedInt(c)) + " is a vowel.");
+		} else {
+			System.out.print(((char)Byte.toUnsignedInt(c)) + " is a consonant.");
+		}
+	}
+
+
+	/**
+	 * This method is missing from the Scanner interface.
+	 */
+	public final static int nextChar(Scanner scanner) {
+		scanner.useDelimiter("");
+		int ret = scanner.next().charAt(0);
+		scanner.reset();
+		return ret;
+	}
+}
+      </code>
+      <out>
+Enter an alphabet: G
+G is a consonant.
+      </out>
+    </java_lang>
+  </content>
+
+  <content id="7">
+    <title>Largest Number Among Three Numbers</title>
+    <desc>In this example, the largest number among three numbers (entered by the user) is found using three different methods.&lt;br&gt;
+    In this program, user is asked to enter three numbers.&lt;br&gt;&lt;br&gt;
+
+Then this program finds out the largest number among three numbers entered by user and displays it with proper message.&lt;br&gt;&lt;br&gt;
+
+This program can be used in more than one way.&lt;br&gt;&lt;br&gt;
+    </desc>
+    <c_lang>
+      <code>
+#include &lt;stdio.h&gt;
+int main()
+{
+    double n1, n2, n3;
+
+    printf("Enter three different numbers: ");
+    scanf("%lf %lf %lf", &amp;n1, &amp;n2, &amp;n3);
+
+    if( n1&gt;=n2 &amp;&amp; n1&gt;=n3 )
+        printf("%.2f is the largest number.", n1);
+
+    if( n2&gt;=n1 &amp;&amp; n2&gt;=n3 )
+        printf("%.2f is the largest number.", n2);
+
+    if( n3&gt;=n1 &amp;&amp; n3&gt;=n2 )
+        printf("%.2f is the largest number.", n3);
+
+    return 0;
+}
+      </code>
+      <out>
+Enter three numbers: -4.5
+3.9
+5.6
+5.60 is the largest number.
+      </out>
+    </c_lang>
+    <cpp_lang>
+      <code>
+#include &lt;iostream&gt;
+using namespace std;
+
+int main()
+{
+    float n1, n2, n3;
+
+    cout &lt;&lt; "Enter three numbers: ";
+    cin &gt;&gt; n1 &gt;&gt; n2 &gt;&gt; n3;
+
+    if(n1 &gt;= n2 &amp;&amp; n1 &gt;= n3)
+    {
+        cout &lt;&lt; "Largest number: " &lt;&lt; n1;
+    }
+
+    if(n2 &gt;= n1 &amp;&amp; n2 &gt;= n3)
+    {
+        cout &lt;&lt; "Largest number: " &lt;&lt; n2;
+    }
+
+    if(n3 &gt;= n1 &amp;&amp; n3 &gt;= n2) {
+        cout &lt;&lt; "Largest number: " &lt;&lt; n3;
+    }
+
+    return 0;
+}
+      </code>
+      <out>
+Enter three numbers: 2.3
+8.3
+-4.2
+Largest number: 8.3
+      </out>
+    </cpp_lang>
+    <java_lang>
+      <code>
+
+import java.util.Scanner;
+
+public class LargeNumber {
+	public static void main(String[] args) {
+		double n1, n2, n3;
+
+		System.out.print("Enter three different numbers: ");
+		n1 = STDIN_SCANNER.nextDouble();
+		n2 = STDIN_SCANNER.nextDouble();
+		n3 = STDIN_SCANNER.nextDouble();
+
+		if(n1 &gt;= n2 &amp;&amp; n1 &gt;= n3) {
+			System.out.printf("%.2f is the largest number.", n1);
+		}
+
+		if(n2 &gt;= n1 &amp;&amp; n2 &gt;= n3) {
+			System.out.printf("%.2f is the largest number.", n2);
+		}
+
+		if(n3 &gt;= n1 &amp;&amp; n3 &gt;= n2) {
+			System.out.printf("%.2f is the largest number.", n3);
+		}
+	}
+
+	public final static Scanner STDIN_SCANNER = new Scanner(System.in);
+}
+      </code>
+      <out>
+Enter three numbers: -4.5
+3.9
+5.6
+5.60 is the largest number.
+      </out>
+    </java_lang>
+  </content>
+
+  <content id="8">
+    <title>Repet of 7</title>
+    <desc>Repet of 7</desc>
+    <c_lang>
+      <code>
+#include &lt;stdio.h&gt;
+int main()
+{
+    double n1, n2, n3;
+
+    printf("Enter three numbers: ");
+    scanf("%lf %lf %lf", &amp;n1, &amp;n2, &amp;n3);
+
+    if (n1&gt;=n2)
+    {
+        if(n1&gt;=n3)
+            printf("%.2lf is the largest number.", n1);
+        else
+            printf("%.2lf is the largest number.", n3);
+    }
+    else
+    {
+        if(n2&gt;=n3)
+            printf("%.2lf is the largest number.", n2);
+        else
+            printf("%.2lf is the largest number.",n3);
+    }
+
+    return 0;
+}
+      </code>
+      <out>
+Enter three numbers: -4.5
+3.9
+5.6
+5.60 is the largest number.
+      </out>
+    </c_lang>
+    <cpp_lang>
+      <code>
+#include &lt;iostream&gt;
+using namespace std;
+
+int main()
+{
+    float n1, n2, n3;
+
+    cout &lt;&lt; "Enter three numbers: ";
+    cin &gt;&gt; n1 &gt;&gt; n2 &gt;&gt; n3;
+
+    if (n1 &gt;= n2)
+    {
+        if (n1 &gt;= n3)
+            cout &lt;&lt; "Largest number: " &lt;&lt; n1;
+        else
+            cout &lt;&lt; "Largest number: " &lt;&lt; n3;
+    }
+    else
+    {
+        if (n2 &gt;= n3)
+            cout &lt;&lt; "Largest number: " &lt;&lt; n2;
+        else
+            cout &lt;&lt; "Largest number: " &lt;&lt; n3;
+    }
+
+    return 0;
+}
+      </code>
+      <out>
+Enter three numbers: 2.3
+8.3
+-4.2
+Largest number: 8.3
+      </out>
+    </cpp_lang>
+    <java_lang>
+      <code>
+import java.util.Scanner;
+
+public class LargerNumber {
+	public final static Scanner STDIN_SCANNER = new Scanner(System.in);
+	public static void main(String[] args) {
+		double n1, n2, n3;
+
+		System.out.print("Enter three numbers: ");
+		n1 = STDIN_SCANNER.nextDouble();
+		n2 = STDIN_SCANNER.nextDouble();
+		n3 = STDIN_SCANNER.nextDouble();
+
+		if(n1 &gt;= n2) {
+			if(n1 &gt;= n3) {
+				System.out.printf("%.2f is the largest number.", n1);
+			} else {
+				System.out.printf("%.2f is the largest number.", n3);
+			}
+		} else if(n2 &gt;= n3) {
+			System.out.printf("%.2f is the largest number.", n2);
+		} else {
+			System.out.printf("%.2f is the largest number.", n3);
+		}
+	}
+
+
+}
+      </code>
+      <out>
+Enter three numbers: -4.5
+3.9
+5.6
+5.60 is the largest number.
+      </out>
+    </java_lang>
+  </content>
+
+  <content id="9">
+    <title>Check Leap Year</title>
+    <desc>
+All years which are perfectly divisible by 4 are leap years except for century years (years ending with 00) which is leap year only it is perfectly divisible by 400.&lt;br&gt;&lt;br&gt;
+
+For example: 2012, 2004, 1968 etc are leap year but, 1971, 2006 etc are not leap year. Similarly, 1200, 1600, 2000, 2400 are leap years but, 1700, 1800, 1900 etc are not.&lt;br&gt;&lt;br&gt;
+
+In this program below, user is asked to enter a year and this program checks whether the year entered by user is leap year or not.
+    </desc>
+    <c_lang>
+      <code>
+#include &lt;stdio.h&gt;
+
+int main()
+{
+    int year;
+
+    printf("Enter a year: ");
+    scanf("%d",&amp;year);
+
+    if(year%4 == 0)
+    {
+        if( year%100 == 0)
+        {
+            // year is divisible by 400, hence the year is a leap year
+            if ( year%400 == 0)
+                printf("%d is a leap year.", year);
+            else
+                printf("%d is not a leap year.", year);
+        }
+        else
+            printf("%d is a leap year.", year );
+    }
+    else
+        printf("%d is not a leap year.", year);
+
+    return 0;
+}
+      </code>
+      <out>
+#Output 1
+Enter a year: 1900
+1900 is not a leap year.
+
+#Output 2
+Enter a year: 2012
+2012 is a leap year.
+      </out>
+    </c_lang>
+    <cpp_lang>
+      <code>
+#include &lt;iostream&gt;
+using namespace std;
+
+int main()
+{
+    int year;
+
+    cout &lt;&lt; "Enter a year: ";
+    cin &gt;&gt; year;
+
+    if (year % 4 == 0)
+    {
+        if (year % 100 == 0)
+        {
+            if (year % 400 == 0)
+                cout &lt;&lt; year &lt;&lt; " is a leap year.";
+            else
+                cout &lt;&lt; year &lt;&lt; " is not a leap year.";
+        }
+        else
+            cout &lt;&lt; year &lt;&lt; " is a leap year.";
+    }
+    else
+        cout &lt;&lt; year &lt;&lt; " is not a leap year.";
+
+    return 0;
+}
+      </code>
+      <out>
+#Output 1
+Enter a year: 1900
+1900 is not a leap year.
+
+#Output 2
+Enter a year: 2012
+2012 is a leap year.
+      </out>
+    </cpp_lang>
+    <java_lang>
+      <code>
+import java.util.Scanner;
+
+public class LeapYear {
+
+  public final static Scanner STDIN_SCANNER = new Scanner(System.in);
+
+	public static void main(String[] args) {
+		int year;
+
+		System.out.print("Enter a year: ");
+		year = STDIN_SCANNER.nextInt();
+
+		if(year % 4 == 0) {
+			if(year % 100 == 0) {
+				// year is divisible by 400, hence the year is a leap year
+				if(year % 400 == 0) {
+					System.out.print(year + " is a leap year.");
+				} else {
+					System.out.print(year + " is not a leap year.");
+				}
+			} else {
+				System.out.print(year + " is a leap year.");
+			}
+		} else {
+			System.out.print(year + " is not a leap year.");
+		}
+	}
+
+
+}
+      </code>
+      <out>
+#Output 1
+Enter a year: 1900
+1900 is not a leap year.
+
+#Output 2
+Enter a year: 2012
+2012 is a leap year.
+      </out>
+    </java_lang>
+  </content>
+
+  <content id="10">
+    <title>Factorial of a Number</title>
+    <desc>
+For any positive number n, it's factorial is given by:&lt;br&gt;&lt;br&gt;
+factorial = 1*2*3...*n&lt;br&gt;&lt;br&gt;
+Factorial of negative number cannot be found and factorial of 0 is 1.&lt;br&gt;&lt;br&gt;
+
+In this program below, user is asked to enter a positive integer. Then the factorial of that number is computed and displayed in the screen.&lt;br&gt;&lt;br&gt;
+This program takes a positive integer from the user and computes factorial using for loop.&lt;br&gt;&lt;br&gt;
+
+Since the factorial of a number may be very large, the type of factorial variable is declared as unsigned long long.&lt;br&gt;&lt;br&gt;
+
+If the user enters negative number, the program displays error message.&lt;br&gt;&lt;br&gt;
+    </desc>
+    <c_lang>
+      <code>
+#include &lt;stdio.h&gt;
+int main()
+{
+    int n, i;
+    unsigned long long factorial = 1;
+
+    printf("Enter an integer: ");
+    scanf("%d",&amp;n);
+
+    // show error if the user enters a negative integer
+    if (n &lt; 0)
+        printf("Error! Factorial of a negative number doesn't exist.");
+
+    else
+    {
+        for(i=1; i&lt;=n; ++i)
+        {
+            factorial *= i;              // factorial = factorial*i;
+        }
+        printf("Factorial of %d = %llu", n, factorial);
+    }
+
+    return 0;
+}
+      </code>
+      <out>
+Enter an integer: 10
+Factorial of 10 = 3628800
+      </out>
+    </c_lang>
+    <cpp_lang>
+      <code>
+#include &lt;iostream&gt;
+using namespace std;
+
+int main()
+{
+    unsigned int n;
+    unsigned long long factorial = 1;
+
+    cout &lt;&lt; "Enter a positive integer: ";
+    cin &gt;&gt; n;
+
+    if (n &lt; 0)
+    {
+      cout &lt;&lt; "Error! Factorial of a negative number doesn't exist.";
+    }
+    else
+    {
+      for(int i = 1; i &lt;=n; ++i)
+      {
+          factorial *= i;
+      }
+      cout &lt;&lt; "Factorial of " &lt;&lt; n &lt;&lt; " = " &lt;&lt; factorial;
+    }
+
+    return 0;
+}
+      </code>
+      <out>
+Enter an integer: 10
+Factorial of 10 = 3628800
+      </out>
+    </cpp_lang>
+    <java_lang>
+      <code>
+import java.util.Scanne
+
+public class Fact {
+
+  public final static Scanner STDIN_SCANNER = new Scanner(System.in);
+
+  public static void main(String[] args) {
+		int n;
+		long factorial_U = 1;
+
+		System.out.print("Enter an integer: ");
+		n = STDIN_SCANNER.nextInt();
+
+		// show error if the user enters a negative integer
+		if(n &lt; 0) {
+			System.out.print("Error! Factorial of a negative number doesn't exist.");
+		} else {
+			for(int i = 1; i &lt;= n; ++i) {
+				factorial_U *= i; // factorial = factorial*i;
+			}
+			System.out.print("Factorial of " + n + " = " + Long.toUnsignedString(factorial_U));
+		}
+	}
+
+
+}
+      </code>
+      <out>
+Enter an integer: 10
+Factorial of 10 = 3628800
+      </out>
+    </java_lang>
+  </content>
+
+  <content id="11">
+    <title>Multiplication Table</title>
+    <desc>
+Example to generate the multiplication table of a number (entered by the user) using for loop.
+    </desc>
+    <c_lang>
+      <code>
+#include &lt;stdio.h&gt;
+int main()
+{
+    int n, i;
+
+    printf("Enter an integer: ");
+    scanf("%d",&amp;n);
+
+    for(i=1; i&lt;=10; ++i)
+    {
+        printf("%d * %d = %d \n", n, i, n*i);
+    }
+
+    return 0;
+}
+      </code>
+      <out>
+Enter an integer: 9
+9 * 1 = 9
+9 * 2 = 18
+9 * 3 = 27
+9 * 4 = 36
+9 * 5 = 45
+9 * 6 = 54
+9 * 7 = 63
+9 * 8 = 72
+9 * 9 = 81
+9 * 10 = 90
+      </out>
+    </c_lang>
+    <cpp_lang>
+      <code>
+#include &lt;iostream&gt;
+using namespace std;
+
+int main()
+{
+    int n;
+
+    cout &lt;&lt; "Enter an integer: ";
+    cin &gt;&gt; n;
+
+    for (int i = 1; i &lt;= 10; ++i) {
+        cout &lt;&lt; n &lt;&lt; " * " &lt;&lt; i &lt;&lt; " = " &lt;&lt; n * i &lt;&lt; endl;
+    }
+
+    return 0;
+}
+      </code>
+      <out>
+9 * 1 = 9
+9 * 2 = 18
+9 * 3 = 27
+9 * 4 = 36
+9 * 5 = 45
+9 * 6 = 54
+9 * 7 = 63
+9 * 8 = 72
+9 * 9 = 81
+9 * 10 = 90
+      </out>
+    </cpp_lang>
+    <java_lang>
+      <code>
+import java.util.Scanner;
+
+public class MultiplyTable {
+
+  public final static Scanner STDIN_SCANNER = new Scanner(System.in);
+
+  public static void main(String[] args) {
+		int n;
+
+		System.out.print("Enter an integer: ");
+		n = STDIN_SCANNER.nextInt();
+
+		for(int i = 1; i &lt;= 10; ++i) {
+			System.out.println(n + " * " + i + " = " + (n * i) + " ");
+		}
+	}
+
+
+}
+      </code>
+      <out>
+9 * 1 = 9
+9 * 2 = 18
+9 * 3 = 27
+9 * 4 = 36
+9 * 5 = 45
+9 * 6 = 54
+9 * 7 = 63
+9 * 8 = 72
+9 * 9 = 81
+9 * 10 = 90
+      </out>
+    </java_lang>
+  </content>
+
+  <content id="12">
+    <title>Repet of 11</title>
+    <desc>Repet of 11</desc>
+    <c_lang>
+      <code>
+#include &lt;stdio.h&gt;
+int main()
+{
+    int n, i, range;
+
+    printf("Enter an integer: ");
+    scanf("%d",&amp;n);
+
+    printf("Enter the range: ");
+    scanf("%d", &amp;range);
+
+    for(i=1; i &lt;= range; ++i)
+    {
+        printf("%d * %d = %d \n", n, i, n*i);
+    }
+
+    return 0;
+}
+      </code>
+      <out>
+Enter an integer: 12
+Enter the range: 8
+12 * 1 = 12
+12 * 2 = 24
+12 * 3 = 36
+12 * 4 = 48
+12 * 5 = 60
+12 * 6 = 72
+12 * 7 = 84
+12 * 8 = 96
+      </out>
+    </c_lang>
+    <cpp_lang>
+      <code>
+#include &lt;iostream&gt;
+using namespace std;
+
+int main()
+{
+    int n, range;
+
+    cout &lt;&lt; "Enter an integer: ";
+    cin &gt;&gt; n;
+
+    cout &lt;&lt; "Enter range: ";
+    cin &gt;&gt; range;
+
+    for (int i = 1; i &lt;= range; ++i) {
+        cout &lt;&lt; n &lt;&lt; " * " &lt;&lt; i &lt;&lt; " = " &lt;&lt; n * i &lt;&lt; endl;
+    }
+
+    return 0;
+}
+      </code>
+      <out>
+Enter an integer: 12
+Enter the range: 8
+12 * 1 = 12
+12 * 2 = 24
+12 * 3 = 36
+12 * 4 = 48
+12 * 5 = 60
+12 * 6 = 72
+12 * 7 = 84
+12 * 8 = 96
+      </out>
+    </cpp_lang>
+    <java_lang>
+      <code>
+import java.util.Scanner;
+
+public class MultiplyTable {
+
+  public final static Scanner STDIN_SCANNER = new Scanner(System.in);
+
+	public static void main(String[] args) {
+		int n, range;
+
+		System.out.print("Enter an integer: ");
+		n = STDIN_SCANNER.nextInt();
+
+		System.out.print("Enter the range: ");
+		range = STDIN_SCANNER.nextInt();
+
+		for(int i = 1; i &lt;= range; ++i) {
+			System.out.println(n + " * " + i + " = " + (n * i) + " ");
+		}
+	}
+
+
+}
+      </code>
+      <out>
+Enter an integer: 12
+Enter the range: 8
+12 * 1 = 12
+12 * 2 = 24
+12 * 3 = 36
+12 * 4 = 48
+12 * 5 = 60
+12 * 6 = 72
+12 * 7 = 84
+12 * 8 = 96
+      </out>
+    </java_lang>
+  </content>
+
+  <content id="13">
+    <title>Fibonacci Sequence</title>
+    <desc>
+Example on how to display the Fibonacci sequence of first n numbers (entered by the user) using loop. Also in different example, you learn to generate the Fibonacci sequence up to a certain number.&lt;br&gt;&lt;br&gt;
+
+The Fibonacci sequence is a series where the next term is the sum of pervious two terms. The first two terms of the Fibonacci sequence is 0 followed by 1.&lt;br&gt;&lt;br&gt;
+
+The Fibonacci sequence: 0, 1, 1, 2, 3, 5, 8, 13, 21
+    </desc>
+    <c_lang>
+      <code>
+#include &lt;stdio.h&gt;
+int main()
+{
+    int i, n, t1 = 0, t2 = 1, nextTerm;
+
+    printf("Enter the number of terms: ");
+    scanf("%d", &amp;n);
+
+    printf("Fibonacci Series: ");
+
+    for (i = 1; i &lt;= n; ++i)
+    {
+        printf("%d, ", t1);
+        nextTerm = t1 + t2;
+        t1 = t2;
+        t2 = nextTerm;
+    }
+    return 0;
+}
+      </code>
+      <out>
+Enter the number of terms: 10
+Fibonacci Series: 0, 1, 1, 2, 3, 5, 8, 13, 21, 34,
+      </out>
+    </c_lang>
+    <cpp_lang>
+      <code>
+#include &lt;iostream&gt;
+using namespace std;
+
+int main()
+{
+    int n, t1 = 0, t2 = 1, nextTerm = 0;
+
+    cout &lt;&lt; "Enter the number of terms: ";
+    cin &gt;&gt; n;
+
+    cout &lt;&lt; "Fibonacci Series: ";
+
+    for (int i = 1; i &lt;= n; ++i)
+    {
+        // Prints the first two terms.
+        if(i == 1)
+        {
+            cout &lt;&lt; " " &lt;&lt; t1;
+            continue;
+        }
+        if(i == 2)
+        {
+            cout &lt;&lt; t2 &lt;&lt; " ";
+            continue;
+        }
+        nextTerm = t1 + t2;
+        t1 = t2;
+        t2 = nextTerm;
+
+        cout &lt;&lt; nextTerm &lt;&lt; " ";
+    }
+    return 0;
+}
+      </code>
+      <out>
+Enter the number of terms: 10
+Fibonacci Series: 0, 1, 1, 2, 3, 5, 8, 13, 21, 34,
+      </out>
+    </cpp_lang>
+    <java_lang>
+      <code>
+import java.util.Scanner;
+
+public class Fibonacci {
+
+  public final static Scanner STDIN_SCANNER = new Scanner(System.in);
+
+  public static void main(String[] args) {
+		int n, t1 = 0, t2 = 1, nextTerm;
+
+		System.out.print("Enter the number of terms: ");
+		n = STDIN_SCANNER.nextInt();
+
+		System.out.print("Fibonacci Series: ");
+
+		for(int i = 1; i &lt;= n; ++i) {
+			System.out.print(t1 + ", ");
+			nextTerm = t1 + t2;
+			t1 = t2;
+			t2 = nextTerm;
+		}
+	}
+
+
+}
+      </code>
+      <out>
+Enter the number of terms: 10
+Fibonacci Series: 0, 1, 1, 2, 3, 5, 8, 13, 21, 34,
+      </out>
+    </java_lang>
+  </content>
+
+  <content id="14">
+    <title>Repeat of 13</title>
+    <desc>Repeat of 13</desc>
+    <c_lang>
+      <code>
+#include &lt;stdio.h&gt;
+int main()
+{
+    int t1 = 0, t2 = 1, nextTerm = 0, n;
+
+    printf("Enter a positive number: ");
+    scanf("%d", &amp;n);
+
+    // displays the first two terms which is always 0 and 1
+    printf("Fibonacci Series: %d, %d, ", t1, t2);
+
+    nextTerm = t1 + t2;
+
+    while(nextTerm &lt;= n)
+    {
+        printf("%d, ",nextTerm);
+        t1 = t2;
+        t2 = nextTerm;
+        nextTerm = t1 + t2;
+    }
+
+    return 0;
+}
+
+      </code>
+      <out>
+Enter a positive integer: 100
+Fibonacci Series: 0, 1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89,
+      </out>
+    </c_lang>
+    <cpp_lang>
+      <code>
+#include &lt;iostream&gt;
+using namespace std;
+
+int main()
+{
+    int t1 = 0, t2 = 1, nextTerm = 0, n;
+
+    cout &lt;&lt; "Enter a positive number: ";
+    cin &gt;&gt; n;
+
+    // displays the first two terms which is always 0 and 1
+    cout &lt;&lt; "Fibonacci Series: " &lt;&lt; t1 &lt;&lt; ", " &lt;&lt; t2 &lt;&lt; ", ";
+
+    nextTerm = t1 + t2;
+
+    while(nextTerm &lt;= n)
+    {
+        cout &lt;&lt; nextTerm &lt;&lt; ", ";
+        t1 = t2;
+        t2 = nextTerm;
+        nextTerm = t1 + t2;
+    }
+    return 0;
+}
+
+      </code>
+      <out>
+Enter a positive integer: 100
+Fibonacci Series: 0, 1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89,
+      </out>
+    </cpp_lang>
+    <java_lang>
+      <code>
+import java.util.Scanner;
+
+public class Fibo {
+  public final static Scanner STDIN_SCANNER = new Scanner(System.in);
+	public static void main(String[] args) {
+		int t1 = 0, t2 = 1, nextTerm = 0, n;
+
+		System.out.print("Enter a positive number: ");
+		n = STDIN_SCANNER.nextInt();
+
+		// displays the first two terms which is always 0 and 1
+		System.out.print("Fibonacci Series: " + t1 + ", " + t2 + ", ");
+
+		nextTerm = t1 + t2;
+
+		while(nextTerm &lt;= n) {
+			System.out.print(nextTerm + ", ");
+			t1 = t2;
+			t2 = nextTerm;
+			nextTerm = t1 + t2;
+		}
+	}
+
+
+}
+
+      </code>
+      <out>
+Enter a positive integer: 100
+Fibonacci Series: 0, 1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89,
+      </out>
+    </java_lang>
+  </content>
+
+  <content id="15">
+    <title>GCD of two Numbers</title>
+    <desc>
+The HCF or GCD of two integers is the largest integer that can exactly divide both numbers (without a remainder).&lt;br&gt;&lt;br&gt;
+
+There are many ways to find the greatest common divisor in C programming.
+    </desc>
+    <c_lang>
+      <code>
+#include &lt;stdio.h&gt;
+int main()
+{
+    int n1, n2, i, gcd;
+
+    printf("Enter two integers: ");
+    scanf("%d %d", &amp;n1, &amp;n2);
+
+    for(i=1; i &lt;= n1 &amp;&amp; i &lt;= n2; ++i)
+    {
+        // Checks if i is factor of both integers
+        if(n1%i==0 &amp;&amp; n2%i==0)
+            gcd = i;
+    }
+
+    printf("G.C.D of %d and %d is %d", n1, n2, gcd);
+
+    return 0;
+}
+
+      </code>
+      <out>
+Enter two positive integers: 81
+153
+GCD = 9
+      </out>
+    </c_lang>
+    <cpp_lang>
+      <code>
+#include &lt;iostream&gt;
+using namespace std;
+
+int main()
+{
+    int n1, n2;
+
+    cout &lt;&lt; "Enter two numbers: ";
+    cin &gt;&gt; n1 &gt;&gt; n2;
+
+    while(n1 != n2)
+    {
+        if(n1 &gt; n2)
+            n1 -= n2;
+        else
+            n2 -= n1;
+    }
+
+    cout &lt;&lt; "HCF = " &lt;&lt; n1;
+    return 0;
+}
+
+      </code>
+      <out>
+Enter two numbers: 78
+52
+HCF = 26
+      </out>
+    </cpp_lang>
+    <java_lang>
+      <code>
+import java.util.Scanner;
+
+public class GCD {
+  public final static Scanner STDIN_SCANNER = new Scanner(System.in);
+  public static void main(String[] args) {
+		int t1 = 0, t2 = 1, nextTerm = 0, n;
+
+		System.out.print("Enter a positive number: ");
+		n = STDIN_SCANNER.nextInt();
+
+		// displays the first two terms which is always 0 and 1
+		System.out.print("Fibonacci Series: " + t1 + ", " + t2 + ", ");
+
+		nextTerm = t1 + t2;
+
+		while(nextTerm &amp;lt;= n) {
+			System.out.print(nextTerm + ", ");
+			t1 = t2;
+			t2 = nextTerm;
+			nextTerm = t1 + t2;
+		}
+	}
+
+
+}
+
+      </code>
+      <out>
+Enter two positive integers: 81
+153
+GCD = 9
+      </out>
+    </java_lang>
+  </content>
+
+  <content id="16">
+    <title>LCM of two Numbers</title>
+    <desc>LCM of two integers a and b is the smallest positive integer that is divisible by both a and b</desc>
+    <c_lang>
+      <code>
+#include &lt;stdio.h&gt;
+int main()
+{
+    int n1, n2, i, gcd, lcm;
+
+    printf("Enter two positive integers: ");
+    scanf("%d %d",&amp;n1,&amp;n2);
+
+    for(i=1; i &lt;= n1 &amp;&amp; i &lt;= n2; ++i)
+    {
+        // Checks if i is factor of both integers
+        if(n1%i==0 &amp;&amp; n2%i==0)
+            gcd = i;
+    }
+
+    lcm = (n1*n2)/gcd;
+    printf("The LCM of two numbers %d and %d is %d.", n1, n2, lcm);
+
+    return 0;
+}
+
+      </code>
+      <out>
+Enter two positive integers: 72
+120
+The LCM of 72 and 120 is 360.
+      </out>
+    </c_lang>
+    <cpp_lang>
+      <code>
+#include &lt;iostream&gt;
+using namespace std;
+
+int main()
+{
+    int n1, n2, hcf, temp, lcm;
+
+    cout &lt;&lt; "Enter two numbers: ";
+    cin &gt;&gt; n1 &gt;&gt; n2;
+
+    hcf = n1;
+    temp = n2;
+
+    while(hcf != temp)
+    {
+        if(hcf &gt; temp)
+            hcf -= temp;
+        else
+            temp -= hcf;
+    }
+
+    lcm = (n1 * n2) / hcf;
+
+    cout &lt;&lt; "LCM = " &lt;&lt; lcm;
+    return 0;
+}
+
+      </code>
+      <out>
+Enter two numbers: 12
+18
+LCM = 36
+      </out>
+    </cpp_lang>
+    <java_lang>
+      <code>
+import java.util.Scanner;
+
+public class LCM {
+	public final static Scanner STDIN_SCANNER = new Scanner(System.in);
+	public static void main(String[] args) {
+		int n1, n2, gcd = 0, lcm;
+
+		System.out.print("Enter two positive integers: ");
+		n1 = STDIN_SCANNER.nextInt();
+		n2 = STDIN_SCANNER.nextInt();
+
+		for(int i = 1; i &lt;= n1 &amp;&amp; i &lt;= n2; ++i) {
+			// Checks if i is factor of both integers
+			if(n1 % i == 0 &amp;&amp; n2 % i == 0) {
+				gcd = i;
+			}
+		}
+
+		lcm = (n1 * n2) / gcd;
+		System.out.print("The LCM of two numbers " + n1 + " and " + n2 + " is " + lcm + ".");
+	}
+
+
+}
+
+      </code>
+      <out>
+Enter two positive integers: 72
+120
+The LCM of 72 and 120 is 360.
+	</out>
+    </java_lang>
+  </content>
+
+  <content id="17">
+    <title>Reverse a Number</title>
+    <desc>This program takes an integer input from the user. Then the while loop is used until n != 0 is false.</desc>
+    <c_lang>
+      <code>
+#include &lt;stdio.h&gt;
+int main()
+{
+    int n, reversedNumber = 0, remainder;
+
+    printf("Enter an integer: ");
+    scanf("%d", &amp;n);
+
+    while(n != 0)
+    {
+        remainder = n%10;
+        reversedNumber = reversedNumber*10 + remainder;
+        n /= 10;
+    }
+
+    printf("Reversed Number = %d", reversedNumber);
+
+    return 0;
+}
+
+      </code>
+      <out>
+Enter an integer: 2345
+Reversed Number = 5432
+      </out>
+    </c_lang>
+    <cpp_lang>
+      <code>
+#include &lt;iostream&gt;
+using namespace std;
+
+int main()
+{
+    int n, reversedNumber = 0, remainder;
+
+    cout &lt;&lt; "Enter an integer: ";
+    cin &gt;&gt; n;
+
+    while(n != 0)
+    {
+        remainder = n%10;
+        reversedNumber = reversedNumber*10 + remainder;
+        n /= 10;
+    }
+
+    cout &lt;&lt; "Reversed Number = " &lt;&lt; reversedNumber;
+
+    return 0;
+}
+
+      </code>
+      <out>
+Enter an integer: 12345
+Reversed number = 54321
+      </out>
+    </cpp_lang>
+    <java_lang>
+      <code>
+import java.util.Scanner;
+
+public class Reverse {
+  public final static Scanner STDIN_SCANNER = new Scanner(System.in);
+	public static void main(String[] args) {
+		int n, reversedNumber = 0, remainder;
+
+		System.out.print("Enter an integer: ");
+		n = STDIN_SCANNER.nextInt();
+
+		while(n != 0) {
+			remainder = n % 10;
+			reversedNumber = reversedNumber * 10 + remainder;
+			n /= 10;
+		}
+
+		System.out.print("Reversed Number = " + reversedNumber);
+	}
+
+
+}
+      </code>
+      <out>
+Enter an integer: 12345
+Reversed number = 54321
+      </out>
+    </java_lang>
+  </content>
+
+  <content id="18">
+    <title>Power of a Number</title>
+    <desc>
+    Example on how to calculate the power of a number if the exponent is an integer. Also, you will learn to compute the power using pow() function.
+    </desc>
+    <c_lang>
+      <code>
+#include &lt;stdio.h&gt;
+int main()
+{
+    int base, exponent;
+
+    long long result = 1;
+
+    printf("Enter a base number: ");
+    scanf("%d", &amp;base);
+
+    printf("Enter an exponent: ");
+    scanf("%d", &amp;exponent);
+
+    while (exponent != 0)
+    {
+        result *= base;
+        --exponent;
+    }
+
+    printf("Answer = %lld", result);
+
+    return 0;
+}
+
+      </code>
+      <out>
+Enter a base number: 3
+Enter an exponent: 4
+Answer = 81
+      </out>
+    </c_lang>
+    <cpp_lang>
+      <code>
+#include &lt;iostream&gt;
+using namespace std;
+
+int main()
+{
+    int exponent;
+    float base, result = 1;
+
+    cout &lt;&lt; "Enter base and exponent respectively:  ";
+    cin &gt;&gt; base &gt;&gt; exponent;
+
+    cout &lt;&lt; base &lt;&lt; "^" &lt;&lt; exponent &lt;&lt; " = ";
+
+    while (exponent != 0) {
+        result *= base;
+        --exponent;
+    }
+
+    cout &lt;&lt; result;
+
+    return 0;
+}
+
+      </code>
+      <out>
+Enter base and exponent respectively:  3.4
+5
+3.4^5 = 454.354
+      </out>
+    </cpp_lang>
+    <java_lang>
+      <code>
+import java.util.Scanner;
+
+public class Power {
+	public static void main(String[] args) {
+		int base, exponent;
+
+		long result = 1;
+
+		System.out.print("Enter a base number: ");
+		base = STDIN_SCANNER.nextInt();
+
+		System.out.print("Enter an exponent: ");
+		exponent = STDIN_SCANNER.nextInt();
+
+		while(exponent != 0) {
+			result *= base;
+			--exponent;
+		}
+
+		System.out.print("Answer = " + result);
+	}
+
+	public final static Scanner STDIN_SCANNER = new Scanner(System.in);
+}
+
+      </code>
+      <out>
+Enter a base number: 3
+Enter an exponent: 4
+Answer = 81
+      </out>
+    </java_lang>
+  </content>
+
+  <content id="19">
+    <title>Repet of 18</title>
+    <desc>Repet of 18</desc>
+    <c_lang>
+      <code>
+#include &lt;stdio.h&gt;
+#include &lt;math.h&gt;
+
+int main()
+{
+    double base, exponent, result;
+
+    printf("Enter a base number: ");
+    scanf("%lf", &amp;base);
+
+    printf("Enter an exponent: ");
+    scanf("%lf", &amp;exponent);
+
+    // calculates the power
+    result = pow(base, exponent);
+
+    printf("%.1lf^%.1lf = %.2lf", base, exponent, result);
+
+    return 0;
+}
+
+      </code>
+      <out>
+Enter a base number: 2.3
+Enter an exponent: 4.5
+2.3^4.5 = 42.44
+      </out>
+    </c_lang>
+    <cpp_lang>
+      <code>
+#include &lt;iostream&gt;
+#include &lt;cmath&gt;
+
+using namespace std;
+
+int main()
+{
+    float base, exponent, result;
+
+    cout &lt;&lt; "Enter base and exponent respectively:  ";
+    cin &gt;&gt; base &gt;&gt; exponent;
+
+    result = pow(base, exponent);
+
+    cout &lt;&lt; base &lt;&lt; "^" &lt;&lt; exponent &lt;&lt; " = " &lt;&lt; result;
+
+    return 0;
+}
+
+      </code>
+      <out>
+Enter base and exponent respectively:  2.3
+4.5
+2.3^4.5 = 42.44
+      </out>
+    </cpp_lang>
+    <java_lang>
+      <code>
+import java.util.Scanner;
+
+public class POWER {
+	public static void main(String[] args) {
+		double base, exponent, result;
+
+		System.out.print("Enter a base number: ");
+		base = STDIN_SCANNER.nextDouble();
+
+		System.out.print("Enter an exponent: ");
+		exponent = STDIN_SCANNER.nextDouble();
+
+		// calculates the power
+		result = Math.pow(base, exponent);
+
+		System.out.printf("%.1f^%.1f = %.2f", base, exponent, result);
+	}
+
+	public final static Scanner STDIN_SCANNER = new Scanner(System.in);
+}
+      </code>
+      <out>
+Enter a base number: 2.3
+Enter an exponent: 4.5
+2.3^4.5 = 42.44
+      </out>
+    </java_lang>
+  </content>
+
+  <content id="20">
+    <title>Palindrome Number</title>
+    <desc>
+This program takes an integer from user and that integer is reversed.&lt;br&gt;&lt;br&gt;
+
+If the reversed integer is equal to the integer entered by user then, that number is a palindrome if not that number is not a palindrome.
+    </desc>
+    <c_lang>
+      <code>
+#include &lt;stdio.h&gt;
+int main()
+{
+    int n, reversedInteger = 0, remainder, originalInteger;
+
+    printf("Enter an integer: ");
+    scanf("%d", &amp;n);
+
+    originalInteger = n;
+
+    // reversed integer is stored in variable
+    while( n!=0 )
+    {
+        remainder = n%10;
+        reversedInteger = reversedInteger*10 + remainder;
+        n /= 10;
+    }
+
+    // palindrome if orignalInteger and reversedInteger are equal
+    if (originalInteger == reversedInteger)
+        printf("%d is a palindrome.", originalInteger);
+    else
+        printf("%d is not a palindrome.", originalInteger);
+
+    return 0;
+}
+
+      </code>
+      <out>
+#Output 1
+Enter an integer: 1001
+1001 is a palindrome.
+
+#Output 2
+Enter an integer: 1011
+1011 is not a palindrome.
+      </out>
+    </c_lang>
+    <cpp_lang>
+      <code>
+#include &lt;iostream&gt;
+using namespace std;
+
+int main()
+{
+     int n, num, digit, rev = 0;
+
+     cout &lt;&lt; "Enter a positive number: ";
+     cin &gt;&gt; num;
+
+     n = num;
+
+     do
+     {
+         digit = num % 10;
+         rev = (rev * 10) + digit;
+         num = num / 10;
+     } while (num != 0);
+
+     cout &lt;&lt; " The reverse of the number is: " &lt;&lt; rev &lt;&lt; endl;
+
+     if (n == rev)
+         cout &lt;&lt; " The number is a palindrome";
+     else
+         cout &lt;&lt; " The number is not a palindrome";
+
+    return 0;
+}
+
+      </code>
+      <out>
+
+#Output 1
+Enter a positive number: 12321
+The reverse of the number is: 12321
+The number is a palindrome
+
+#Output 2
+Enter a positive number: 12331
+The reverse of the number is: 13321
+The number is not a palindrome
+
+      </out>
+    </cpp_lang>
+    <java_lang>
+      <code>
+import java.util.Scanner;
+
+public class Palindrome {
+	public static void main(String[] args) {
+		int n, reversedInteger = 0, remainder, originalInteger;
+
+		System.out.print("Enter an integer: ");
+		n = STDIN_SCANNER.nextInt();
+
+		originalInteger = n;
+
+		// reversed integer is stored in variable
+		while(n != 0) {
+			remainder = n % 10;
+			reversedInteger = reversedInteger * 10 + remainder;
+			n /= 10;
+		}
+
+		// palindrome if orignalInteger and reversedInteger are equal
+		if(originalInteger == reversedInteger) {
+			System.out.print(originalInteger + " is a palindrome.");
+		} else {
+			System.out.print(originalInteger + " is not a palindrome.");
+		}
+	}
+
+	public final static Scanner STDIN_SCANNER = new Scanner(System.in);
+}
+
+      </code>
+      <out>
+#Output 1
+Enter an integer: 1001
+1001 is a palindrome.
+
+#Output 2
+Enter an integer: 1011
+1011 is not a palindrome.
+      </out>
+    </java_lang>
+  </content>
+
+  <content id="21">
+    <title>Check Whether a Number is Prime or Not</title>
+    <desc>
+A positive integer which is only divisible by 1 and itself is known as prime number.&lt;br&gt;&lt;br&gt;
+
+For example: 13 is a prime number because it is only divisible by 1 and 13 but, 15 is not prime number because it is divisible by 1, 3, 5 and 15.
+    </desc>
+    <c_lang>
+      <code>
+#include &lt;stdio.h&gt;
+int main()
+{
+    int n, i, flag = 0;
+
+    printf("Enter a positive integer: ");
+    scanf("%d",&amp;n);
+
+    for(i=2; i&lt;=n/2; ++i)
+    {
+        // condition for nonprime number
+        if(n%i==0)
+        {
+            flag=1;
+            break;
+        }
+    }
+
+    if (flag==0)
+        printf("%d is a prime number.",n);
+    else
+        printf("%d is not a prime number.",n);
+
+    return 0;
+}
+
+      </code>
+      <out>
+Enter a positive integer: 29
+29 is a prime number.
+      </out>
+    </c_lang>
+    <cpp_lang>
+      <code>
+#include &lt;iostream&gt;
+using namespace std;
+
+int main()
+{
+  int n, i;
+  bool isPrime = true;
+
+  cout &lt;&lt; "Enter a positive integer: ";
+  cin &gt;&gt; n;
+
+  for(i = 2; i &lt;= n / 2; ++i)
+  {
+      if(n % i == 0)
+      {
+          isPrime = false;
+          break;
+      }
+  }
+  if (isPrime)
+      cout &lt;&lt; "This is a prime number";
+  else
+      cout &lt;&lt; "This is not a prime number";
+
+  return 0;
+}
+
+      </code>
+      <out>
+Enter a positive integer: 29
+This is a prime number.
+      </out>
+    </cpp_lang>
+    <java_lang>
+      <code>
+import java.util.Scanner;
+
+public class Prime {
+	public static void main(String[] args) {
+		int n;
+		boolean flag = false;
+
+		System.out.print("Enter a positive integer: ");
+		n = STDIN_SCANNER.nextInt();
+
+		for(int i = 2; i &lt;= n / 2; ++i) {
+			// condition for nonprime number
+			if(n % i == 0) {
+				flag = true;
+				break;
+			}
+		}
+
+		if(!flag) {
+			System.out.print(n + " is a prime number.");
+		} else {
+			System.out.print(n + " is not a prime number.");
+		}
+	}
+
+	public final static Scanner STDIN_SCANNER = new Scanner(System.in);
+}
+
+      </code>
+      <out>
+Enter a positive integer: 29
+29 is a prime number.
+      </out>
+    </java_lang>
+  </content>
+
+  <content id="22">
+    <title>Prime Numbers Between Two Intervals</title>
+    <desc>
+In this program, the while loop is iterated (high - low - 1) times.&lt;br&gt;&lt;br&gt;
+
+In each iteration, whether low is a prime number or not is checked and the value of low is incremented by 1 until low is equal to high.
+    </desc>
+    <c_lang>
+      <code>
+#include &lt;iostream&gt;
+using namespace std;
+
+int main()
+{
+    int low, high, i, flag;
+
+    cout &lt;&lt; "Enter two numbers(intervals): ";
+    cin &gt;&gt; low &gt;&gt; high;
+
+    cout &lt;&lt; "Prime numbers between " &lt;&lt; low &lt;&lt; " and " &lt;&lt; high &lt;&lt; " are: ";
+
+    while (low &lt; high)
+    {
+        flag = 0;
+
+        for(i = 2; i &lt;= low/2; ++i)
+        {
+            if(low % i == 0)
+            {
+                flag = 1;
+                break;
+            }
+        }
+
+        if (flag == 0)
+            cout &lt;&lt; low &lt;&lt; " ";
+
+        ++low;
+    }
+
+    return 0;
+}
+
+      </code>
+      <out>
+Enter two numbers(intervals): 20 
+50
+Prime numbers between 20 and 50 are: 23 29 31 37 41 43 47
+	</out>
+    </c_lang>
+    <cpp_lang>
+      <code>
+#include &lt;iostream&gt;
+using namespace std;
+
+int main()
+{
+    int low, high, i, flag;
+
+    cout &lt;&lt; "Enter two numbers(intervals): ";
+    cin &gt;&gt; low &gt;&gt; high;
+
+    cout &lt;&lt; "Prime numbers between " &lt;&lt; low &lt;&lt; " and " &lt;&lt; high &lt;&lt; " are: ";
+
+    while (low &lt; high)
+    {
+        flag = 0;
+
+        for(i = 2; i &lt;= low/2; ++i)
+        {
+            if(low % i == 0)
+            {
+                flag = 1;
+                break;
+            }
+        }
+
+        if (flag == 0)
+            cout &lt;&lt; low &lt;&lt; " ";
+
+        ++low;
+    }
+
+    return 0;
+}
+
+      </code>
+      <out>
+Enter two numbers(intervals): 20 50
+Prime numbers between 20 and 50 are: 23 29 31 37 41 43 47
+      </out>
+    </cpp_lang>
+    <java_lang>
+      <code>
+import java.util.Scanner;
+
+public class Prime {
+	public static void main(String[] args) {
+		int low, high;
+		boolean flag;
+		System.out.print("Enter two numbers(intervals): ");
+		low = STDIN_SCANNER.nextInt();
+		high = STDIN_SCANNER.nextInt();
+
+		System.out.print("Prime numbers between " + low + " and " + high + " are: ");
+
+		while(low &lt; high) {
+			flag = false;
+
+			for(int i = 2; i &lt;= low / 2; ++i) {
+				if(low % i == 0) {
+					flag = true;
+					break;
+				}
+			}
+
+			if(!flag) {
+				System.out.print(low + " ");
+			}
+
+			++low;
+		}
+	}
+
+	public final static Scanner STDIN_SCANNER = new Scanner(System.in);
+}
+
+      </code>
+      <out>
+Enter two numbers(intervals): 20 
+50
+Prime numbers between 20 and 50 are: 23 29 31 37 41 43 47
+      </out>
+    </java_lang>
+  </content>
+
+  <content id="23">
+    <title>Armstrong Number</title>
+    <desc>
+A positive integer is called an Armstrong number of order n if&lt;br&gt;
+
+abcd... = an + bn + cn + dn + ...&lt;br&gt;&lt;br&gt;
+In case of an Armstrong number of 3 digits, the sum of cubes of each digits is equal to the number itself. For example:&lt;br&gt;
+
+153 = 1*1*1 + 5*5*5 + 3*3*3  // 153 is an Armstrong number.
+    </desc>
+    <c_lang>
+      <code>
+#include &lt;stdio.h&gt;
+#include &lt;math.h&gt;
+
+int main()
+{
+    int number, originalNumber, remainder, result = 0, n = 0 ;
+
+    printf("Enter an integer: ");
+    scanf("%d", &amp;number);
+
+     originalNumber = number;
+
+    while (originalNumber != 0)
+    {
+        originalNumber /= 10;
+        ++n;
+    }
+
+    originalNumber = number;
+
+    while (originalNumber != 0)
+    {
+        remainder = originalNumber%10;
+        result += pow(remainder, n);
+        originalNumber /= 10;
+    }
+
+    if(result == number)
+        printf("%d is an Armstrong number.", number);
+    else
+        printf("%d is not an Armstrong number.", number);
+
+    return 0;
+}
+
+      </code>
+      <out>
+Enter an integer: 1634
+1634 is an Armstrong number.
+      </out>
+    </c_lang>
+    <cpp_lang>
+      <code>
+#include &lt;iostream&gt;
+using namespace std;
+
+int main()
+{
+  int origNum, num, rem, sum = 0;
+  cout &lt;&lt; "Enter a positive  integer: ";
+  cin &gt;&gt; origNum;
+
+  num = origNum;
+
+  while(num != 0)
+  {
+      digit = num % 10;
+      sum += digit * digit * digit;
+      num /= 10;
+  }
+
+  if(sum == origNum)
+    cout &lt;&lt; origNum &lt;&lt; " is an Armstrong number.";
+  else
+    cout &lt;&lt; origNum &lt;&lt; " is not an Armstrong number.";
+
+  return 0;
+}
+
+      </code>
+      <out>
+Enter a positive integer: 371
+371 is an Armstrong number.
+      </out>
+    </cpp_lang>
+    <java_lang>
+      <code>
+import java.util.Scanner;
+
+public class Armstrong {
+	public static void main(String[] args) {
+		int number, originalNumber, remainder, result = 0, n = 0;
+
+		System.out.print("Enter an integer: ");
+		number = STDIN_SCANNER.nextInt();
+
+		originalNumber = number;
+
+		while(originalNumber != 0) {
+			originalNumber /= 10;
+			++n;
+		}
+
+		originalNumber = number;
+
+		while(originalNumber != 0) {
+			remainder = originalNumber % 10;
+			result += Math.pow(remainder, n);
+			originalNumber /= 10;
+		}
+
+		if(result == number) {
+			System.out.print(number + " is an Armstrong number.");
+		} else {
+			System.out.print(number + " is not an Armstrong number.");
+		}
+	}
+
+	public final static Scanner STDIN_SCANNER = new Scanner(System.in);
+}
+      </code>
+      <out>
+Enter an integer: 1634
+1634 is an Armstrong number.
+      </out>
+    </java_lang>
+  </content>
+
+  <content id="24">
+    <title>Factors of a Number</title>
+    <desc>
+In this program, an integer entered by user is stored in variable n.&lt;br&gt;&lt;br&gt;
+
+Then, for loop is executed with an initial condition i = 1 and checked whether n is perfectly divisible by i or not. If n is perfectly divisible by i then, i will be the factor of n.&lt;br&gt;&lt;br&gt;
+
+In each iteration, the value of i is updated (increased by 1).&lt;br&gt;&lt;br&gt;
+
+This process goes until test condition i &lt;= n becomes false,i.e., this program checks whether number entered by user n is perfectly divisible by all numbers from 1 to n and all displays factors of that number.&lt;br&gt;&lt;br&gt;
+    </desc>
+    <c_lang>
+      <code>
+#include &lt;stdio.h&gt;
+int main()
+{
+    int number, i;
+
+    printf("Enter a positive integer: ");
+    scanf("%d",&amp;number);
+
+    printf("Factors of %d are: ", number);
+    for(i=1; i &lt;= number; ++i)
+    {
+        if (number%i == 0)
+        {
+            printf("%d ",i);
+        }
+    }
+
+    return 0;
+}
+
+      </code>
+      <out>
+Enter a positive integer: 60
+Factors of 60 are: 1 2 3 4 5 6 10 12 15 20 30 60
+      </out>
+    </c_lang>
+    <cpp_lang>
+      <code>
+#include &lt;iostream&gt;
+using namespace std;
+
+int main()
+{
+    int n, i;
+
+    cout &lt;&lt; "Enter a positive integer: ";
+    cin &gt;&gt; n;
+
+    cout &lt;&lt; "Factors of " &lt;&lt; n &lt;&lt; " are: " &lt;&lt; endl;
+    for(i = 1; i &lt;= n; ++i)
+    {
+        if(n % i == 0)
+            cout &lt;&lt; i &lt;&lt; endl;
+    }
+
+    return 0;
+}
+
+      </code>
+      <out>
+Enter a positive integer: 60
+Factors of 60 are: 1 2 3 4 5 6 12 15 20 30 60
+      </out>
+    </cpp_lang>
+    <java_lang>
+      <code>
+import java.util.Scanner;
+
+public class Factors {
+	public static void main(String[] args) {
+		int number;
+
+		System.out.print("Enter a positive integer: ");
+		number = STDIN_SCANNER.nextInt();
+
+		System.out.print("Factors of " + number + " are: ");
+		for(int i = 1; i &lt;= number; ++i) {
+			if(number % i == 0) {
+				System.out.print(i + " ");
+			}
+		}
+	}
+
+	public final static Scanner STDIN_SCANNER = new Scanner(System.in);
+}
+      </code>
+      <out>
+Enter a positive integer: 60
+Factors of 60 are: 1 2 3 4 5 6 10 12 15 20 30 60
+      </out>
+    </java_lang>
+  </content>
+
+  <content id="25">
+    <title>Half pyramid</title>
+    <desc>Program to print half pyramid in console using *</desc>
+    <c_lang>
+      <code>
+#include &lt;stdio.h&gt;
+int main()
+{
+    int i, j, rows;
+
+    printf("Enter number of rows: ");
+    scanf("%d",&amp;rows);
+
+    for(i=1; i&lt;=rows; ++i)
+    {
+        for(j=1; j&lt;=i; ++j)
+        {
+            printf("* ");
+        }
+        printf("\n");
+    }
+    return 0;
+}
+
+      </code>
+      <out>
+*
+* *
+* * *
+* * * *
+* * * * *
+      </out>
+    </c_lang>
+    <cpp_lang>
+      <code>
+#include &lt;iostream&gt;
+using namespace std;
+
+int main()
+{
+    int rows;
+
+    cout &lt;&lt; "Enter number of rows: ";
+    cin &gt;&gt; rows;
+
+    for(int i = 1; i &lt;= rows; ++i)
+    {
+        for(int j = 1; j &lt;= i; ++j)
+        {
+            cout &lt;&lt; "* ";
+        }
+        cout &lt;&lt; "\n";
+    }
+    return 0;
+}
+
+      </code>
+      <out>
+*
+* *
+* * *
+* * * *
+* * * * *
+      </out>
+    </cpp_lang>
+    <java_lang>
+      <code>
+import java.util.Scanner;
+
+public class Pyramid {
+	public static void main(String[] args) {
+		int rows;
+
+		System.out.print("Enter number of rows: ");
+		rows = STDIN_SCANNER.nextInt();
+
+		for(int i = 1; i &lt;= rows; ++i) {
+			for(int j = 1; j &lt;= i; ++j) {
+				System.out.print("* ");
+			}
+			System.out.println();
+		}
+	}
+
+	public final static Scanner STDIN_SCANNER = new Scanner(System.in);
+}
+
+      </code>
+      <out>
+*
+* *
+* * *
+* * * *
+* * * * *
+      </out>
+    </java_lang>
+  </content>
+
+  <content id="26">
+    <title>half pyramid a using numbers</title>
+    <desc>Program to pprint half pyramid a using numbers</desc>
+    <c_lang>
+      <code>
+#include &lt;stdio.h&gt;
+int main()
+{
+    int i, j, rows;
+
+    printf("Enter number of rows: ");
+    scanf("%d",&amp;rows);
+
+    for(i=1; i&lt;=rows; ++i)
+    {
+        for(j=1; j&lt;=i; ++j)
+        {
+            printf("%d ",j);
+        }
+        printf("\n");
+    }
+    return 0;
+}
+
+      </code>
+      <out>
+1
+1 2
+1 2 3
+1 2 3 4
+1 2 3 4 5
+      </out>
+    </c_lang>
+    <cpp_lang>
+      <code>
+#include &lt;iostream&gt;
+using namespace std;
+
+int main()
+{
+    int rows;
+
+    cout &lt;&lt; "Enter number of rows: ";
+    cin &gt;&gt; rows;
+
+    for(int i = 1; i &lt;= rows; ++i)
+    {
+        for(int j = 1; j &lt;= i; ++j)
+        {
+            cout &lt;&lt; j &lt;&lt; " ";
+        }
+        cout &lt;&lt; "\n";
+    }
+    return 0;
+}
+
+      </code>
+      <out>
+1
+1 2
+1 2 3
+1 2 3 4
+1 2 3 4 5
+      </out>
+    </cpp_lang>
+    <java_lang>
+      <code>
+import java.util.Scanner;
+
+public class DemoTranslation {
+	public static void main(String[] args) {
+		int rows;
+
+		System.out.print("Enter number of rows: ");
+		rows = STDIN_SCANNER.nextInt();
+
+		for(int i = 1; i &lt;= rows; ++i) {
+			for(int j = 1; j &lt;= i; ++j) {
+				System.out.print(j + " ");
+			}
+			System.out.println();
+		}
+	}
+
+	public final static Scanner STDIN_SCANNER = new Scanner(System.in);
+}
+      </code>
+      <out>
+1
+1 2
+1 2 3
+1 2 3 4
+1 2 3 4 5
+      </out>
+    </java_lang>
+  </content>
+
+  <content id="27">
+    <title>pyramid using alphabets</title>
+    <desc>Program to print half pyramid using alphabets</desc>
+    <c_lang>
+      <code>
+#include &lt;stdio.h&gt;
+int main()
+{
+    int i, j;
+    char input, alphabet = 'A';
+
+    printf("Enter the uppercase character you want to print in last row: ");
+    scanf("%c",&amp;input);
+
+    for(i=1; i &lt;= (input-'A'+1); ++i)
+    {
+        for(j=1;j&lt;=i;++j)
+        {
+            printf("%c", alphabet);
+        }
+        ++alphabet;
+
+        printf("\n");
+    }
+    return 0;
+}
+
+      </code>
+      <out>
+A
+B B
+C C C
+D D D D
+E E E E E
+      </out>
+    </c_lang>
+    <cpp_lang>
+      <code>
+#include &lt;iostream&gt;
+using namespace std;
+
+int main()
+{
+    char input, alphabet = 'A';
+
+    cout &lt;&lt; "Enter the uppercase character you want to print in the last row: ";
+    cin &gt;&gt; input;
+
+    for(int i = 1; i &lt;= (input-'A'+1); ++i)
+    {
+        for(int j = 1; j &lt;= i; ++j)
+        {
+            cout &lt;&lt; alphabet &lt;&lt; " ";
+        }
+        ++alphabet;
+
+        cout &lt;&lt; endl;
+    }
+    return 0;
+}
+
+      </code>
+      <out>
+A
+B B
+C C C
+D D D D
+E E E E E
+      </out>
+    </cpp_lang>
+    <java_lang>
+      <code>
+import java.util.Scanner;
+
+public class DemoTranslation {
+	public static void main(String[] args) {
+		byte input, alphabet = 'A';
+
+		System.out.print("Enter the uppercase character you want to print in last row: ");
+		input = (byte)nextChar(STDIN_SCANNER);
+
+		for(int i = 1; i &lt;= input - 'A' + 1; ++i) {
+			for(int j = 1; j &lt;= i; ++j) {
+				System.out.print((char)Byte.toUnsignedInt(alphabet));
+			}
+			++alphabet;
+
+			System.out.println();
+		}
+	}
+
+	public final static Scanner STDIN_SCANNER = new Scanner(System.in);
+
+	/**
+	 * This method is missing from the Scanner interface.
+	 */
+	public final static int nextChar(Scanner scanner) {
+		scanner.useDelimiter("");
+		int ret = scanner.next().charAt(0);
+		scanner.reset();
+		return ret;
+	}
+}
+
+      </code>
+      <out>
+A
+B B
+C C C
+D D D D
+E E E E E
+      </out>
+    </java_lang>
+  </content>
+
+  <content id="28">
+    <title>Inverted half pyramid using *</title>
+    <desc>Program to print Inverted half pyramid using *</desc>
+    <c_lang>
+      <code>
+#include &lt;stdio.h&gt;
+int main()
+{
+    int i, j, rows;
+
+    printf("Enter number of rows: ");
+    scanf("%d",&amp;rows);
+
+    for(i=rows; i&gt;=1; --i)
+    {
+        for(j=1; j&lt;=i; ++j)
+        {
+            printf("* ");
+        }
+        printf("\n");
+    }
+
+    return 0;
+}
+
+      </code>
+      <out>
+* * * * *
+* * * *
+* * * 
+* *
+*
+      </out>
+    </c_lang>
+    <cpp_lang>
+      <code>
+#include &lt;iostream&gt;
+using namespace std;
+
+int main()
+{
+    int rows;
+
+    cout &lt;&lt; "Enter number of rows: ";
+    cin &gt;&gt; rows;
+
+    for(int i = rows; i &gt;= 1; --i)
+    {
+        for(int j = 1; j &lt;= i; ++j)
+        {
+            cout &lt;&lt; "* ";
+        }
+        cout &lt;&lt; endl;
+    }
+
+    return 0;
+}
+
+      </code>
+      <out>
+* * * * *
+* * * *
+* * * 
+* *
+*
+      </out>
+    </cpp_lang>
+    <java_lang>
+      <code>
+import java.util.Scanner;
+
+public class DemoTranslation {
+	public static void main(String[] args) {
+		int rows;
+
+		System.out.print("Enter number of rows: ");
+		rows = STDIN_SCANNER.nextInt();
+
+		for(int i = rows; i &gt;= 1; --i) {
+			for(int j = 1; j &lt;= i; ++j) {
+				System.out.print("* ");
+			}
+			System.out.println();
+		}
+	}
+
+	public final static Scanner STDIN_SCANNER = new Scanner(System.in);
+}
+
+      </code>
+      <out>
+* * * * *
+* * * *
+* * * 
+* *
+*
+      </out>
+    </java_lang>
+  </content>
+
+  <content id="1">
+    <title>Title here 2</title>
+    <desc>Description here</desc>
+    <c_lang>
+      <code>C Code here</code>
+      <out>C output here</out>
+    </c_lang>
+    <cpp_lang>
+      <code>C++ Code here</code>
+      <out>C++ output here</out>
+    </cpp_lang>
+    <java_lang>
+      <code>Java Code here</code>
+      <out>Java output here</out>
+    </java_lang>
+  </content>
+
+  <content id="1">
+    <title>Title here 2</title>
+    <desc>Description here</desc>
+    <c_lang>
+      <code>C Code here</code>
+      <out>C output here</out>
+    </c_lang>
+    <cpp_lang>
+      <code>C++ Code here</code>
+      <out>C++ output here</out>
+    </cpp_lang>
+    <java_lang>
+      <code>Java Code here</code>
+      <out>Java output here</out>
+    </java_lang>
+  </content>
+
+  <content id="1">
+    <title>Title here 2</title>
+    <desc>Description here</desc>
+    <c_lang>
+      <code>C Code here</code>
+      <out>C output here</out>
+    </c_lang>
+    <cpp_lang>
+      <code>C++ Code here</code>
+      <out>C++ output here</out>
+    </cpp_lang>
+    <java_lang>
+      <code>Java Code here</code>
+      <out>Java output here</out>
+    </java_lang>
+  </content>
+
+</document>

@@ -1,0 +1,1436 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<document>
+
+  <content id="0">
+    <title>"Hello, World!" Program</title>
+    <desc>A simple program to display "Hello, World!" on the screen. Since, it's a very simple program, it is often used to illustrate the syntax of a programming language.</desc>
+    <c_lang>
+      <code>
+#include &lt;stdio.h&gt;
+int main()
+{
+   // printf() displays the string inside quotation
+   printf("Hello, World!");
+   return 0;
+}
+
+      </code>
+      <out>Hello, World!</out>
+    </c_lang>
+    <cpp_lang>
+      <code>
+#include &lt;iostream&gt;
+using namespace std;
+
+int main() 
+{
+    cout &lt;&lt; "Hello, World!";
+    return 0;
+}
+      </code>
+      <out>Hello, World!</out>
+    </cpp_lang>
+    <java_lang>
+      <code>
+public class HelloWorld {
+	
+    public static void main(String[] args) {
+        // prints "Hello, World!"
+        System.out.println("Hello, World!");
+    }
+}
+      </code>
+      <out>Hello, World!</out>
+    </java_lang>
+  </content>
+
+
+  <content id="1">
+    <title>Program to Add Two Integers</title>
+    <desc>In this program, user is asked to enter two integers. Then, the sum of those two integers is stored in a variable and displayed on the screen.</desc>
+    <c_lang>
+      <code>
+#include &lt;stdio.h&gt;
+int main()
+{
+    int firstNumber, secondNumber, sumOfTwoNumbers;
+    
+    printf("Enter two integers: ");
+
+    // Two integers entered by user is stored using scanf() function
+    scanf("%d %d", &amp;firstNumber, &amp;secondNumber);
+
+    // sum of two numbers in stored in variable sumOfTwoNumbers
+    sumOfTwoNumbers = firstNumber + secondNumber;
+
+    // Displays sum      
+    printf("%d + %d = %d", firstNumber, secondNumber, sumOfTwoNumbers);
+
+    return 0;
+}
+      </code>
+      <out>
+Enter two integers: 12
+11
+12 + 11 = 23</out>
+    </c_lang>
+    <cpp_lang>
+      <code>
+#include &lt;iostream&gt;
+using namespace std;
+
+int main()
+{
+    int firstNumber, secondNumber, sumOfTwoNumbers;
+    
+    cout &lt;&lt; "Enter two integers: ";
+    cin &gt;&gt; firstNumber &gt;&gt; secondNumber;
+
+    // sum of two numbers in stored in variable sumOfTwoNumbers
+    sumOfTwoNumbers = firstNumber + secondNumber;
+
+    // Prints sum 
+    cout &lt;&lt; firstNumber &lt;&lt; " + " &lt;&lt;  secondNumber &lt;&lt; " = " &lt;&lt; sumOfTwoNumbers;     
+
+    return 0;
+}
+      </code>
+      <out>
+Enter two integers: 4
+5
+4 + 5 = 9
+      </out>
+    </cpp_lang>
+    <java_lang>
+      <code>
+public class Sum {
+
+  public static void main(String[] args) {
+	// TODO Auto-generated method stub
+		
+	int a = 0 ,b = 0 ,c;
+		
+	System.out.println("Enter two integers: ");		
+	BufferedReader input = new BufferedReader ( new InputStreamReader ( System.in ) );
+	try {
+		a = Integer.parseInt(input.readLine());
+		b = Integer.parseInt(input.readLine());
+	} catch (NumberFormatException e) {
+		
+		e.printStackTrace();
+	} catch (IOException e) {
+		
+		e.printStackTrace();
+	}
+	
+	c = a + b;
+	
+	System.out.println(a+" + "+b+" = "+c);
+	
+  }
+}
+
+      </code>
+      <out>
+Enter two integers: 
+10
+11
+10 + 11 = 21
+      </out>
+    </java_lang>
+  </content>
+  
+
+  <content id="2">
+    <title>Program to Find Quotient and Remainder</title>
+    <desc>In this example, you will learn to find the quotient and remainder of a given dividend and divisor.&lt;br&gt;
+In this program, user is asked to enter two integers (divisor and dividend) and computes the quotient and remainder.
+&lt;br&gt;&lt;br&gt;
+To compute quotient and remainder, both divisor and dividend should be integers.
+    </desc>
+    <c_lang>
+      <code>
+#include &lt;stdio.h&gt;
+
+int main()
+{    
+    int divisor, dividend, quotient, remainder;
+
+    printf("Enter dividend: ");
+    scanf("%d", &amp;dividend);
+
+    printf("Enter divisor: ");
+    scanf("%d", &amp;divisor);
+
+    quotient = dividend / divisor;
+    remainder = dividend % divisor;
+
+    printf("Quotient = %d\n", quotient);
+    printf("Remainder = %d", remainder);
+
+    return 0;
+}
+      </code>
+      <out>
+Enter dividend: 13
+Enter divisor: 4
+Quotient = 3
+Remainder = 1
+      </out>
+    </c_lang>
+    <cpp_lang>
+      <code>
+#include &lt;iostream&gt;
+using namespace std;
+
+int main()
+{    
+    int divisor, dividend, quotient, remainder;
+
+    cout &lt;&lt; "Enter dividend: ";
+    cin &gt;&gt; dividend;
+
+    cout &lt;&lt; "Enter divisor: ";
+    cin &gt;&gt; divisor;
+
+    quotient = dividend / divisor;
+    remainder = dividend % divisor;
+
+    cout &lt;&lt; "Quotient = " &lt;&lt; quotient &lt;&lt; endl;
+    cout &lt;&lt; "Remainder = " &lt;&lt; remainder;
+
+    return 0;
+}
+      </code>
+      <out>
+Enter dividend: 13
+Enter divisor: 4
+Quotient = 3
+Remainder = 1
+      </out>
+    </cpp_lang>
+    <java_lang>
+      <code>
+import java.util.Scanner;
+
+public class DemoTranslation {
+
+	public final static Scanner STDIN_SCANNER = new Scanner(System.in);
+	public static void main(String[] args) {
+		int dividend, divisor, quotient, remainder;
+
+		System.out.print("Enter dividend: ");
+		dividend = STDIN_SCANNER.nextInt();
+
+		System.out.print("Enter divisor: ");
+		divisor = STDIN_SCANNER.nextInt();
+
+		// Computes quotient
+		quotient = dividend / divisor;
+
+		// Computes remainder
+		remainder = dividend % divisor;
+
+		System.out.println("Quotient = " + quotient);
+		System.out.print("Remainder = " + remainder);
+	}
+
+}
+      </code>
+      <out>
+Enter dividend: 13
+Enter divisor: 4
+Quotient = 3
+Remainder = 1
+      </out>
+    </java_lang>
+  </content>
+
+  <content id="3">
+    <title>Program to Swap Numbers Using Temporary Variable</title>
+    <desc>Here, temporaryVariable is used to hold the value of firstNumber and doesn't have any other use except that. You can also write the swapping program without using temporaryVariable.&lt;br&gt;&lt;br&gt;
+To perform swapping in below example, three variables are used.&lt;br&gt;&lt;br&gt;
+The contents of the first variable is copied into the temp variable. Then, the contents of second variable is copied to the first variable.&lt;br&gt;&lt;br&gt;
+Finally, the contents of the temp variable is copied back to the second variable which completes the swapping process.
+    
+    </desc>
+    <c_lang>
+      <code>
+#include &lt;stdio.h&gt;
+int main()
+{
+      double firstNumber, secondNumber, temporaryVariable;
+
+      printf("Enter first number: ");
+      scanf("%lf", &amp;firstNumber);
+
+      printf("Enter second number: ");
+      scanf("%lf",&amp;secondNumber);
+
+      // Value of firstNumber is assigned to temporaryVariable
+      temporaryVariable = firstNumber;
+
+      // Value of secondNumber is assigned to firstNumber
+      firstNumber = secondNumber;
+
+      // Value of temporaryVariable (which contains the initial value of firstNumber) is assigned to secondNumber
+      secondNumber = temporaryVariable;
+
+      printf("\nAfter swapping, firstNumber = %.2lf\n", firstNumber);
+      printf("After swapping, secondNumber = %.2lf", secondNumber);
+
+      return 0;
+}
+      </code>
+      <out>
+Enter first number: 1.20
+Enter second number: 2.45
+
+After swapping, firstNumber = 2.45
+After swapping, secondNumber = 1.20
+      </out>
+    </c_lang>
+    <cpp_lang>
+      <code>
+#include &lt;iostream&gt;
+using namespace std;
+
+int main()
+{
+    int a = 5, b = 10, temp;
+
+    cout &lt;&lt; "Before swapping." &lt;&lt; endl;
+    cout &lt;&lt; "a = " &lt;&lt; a &lt;&lt; ", b = " &lt;&lt; b &lt;&lt; endl;
+
+    temp = a;
+    a = b;
+    b = temp;
+
+    cout &lt;&lt; "\nAfter swapping." &lt;&lt; endl;
+    cout &lt;&lt; "a = " &lt;&lt; a &lt;&lt; ", b = " &lt;&lt; b &lt;&lt; endl;
+
+    return 0;
+}
+      </code>
+      <out>
+Before swapping.
+a = 5, b = 10
+
+After swapping.
+a = 10, b = 5
+	</out>
+    </cpp_lang>
+    <java_lang>
+      <code>
+import java.util.Scanner;
+
+public class Swap {
+	public final static Scanner STDIN_SCANNER = new Scanner(System.in);
+	public static void main(String[] args) {
+		double firstNumber, secondNumber, temporaryVariable;
+
+		System.out.print("Enter first number: ");
+		firstNumber = STDIN_SCANNER.nextDouble();
+
+		System.out.print("Enter second number: ");
+		secondNumber = STDIN_SCANNER.nextDouble();
+
+		// Value of firstNumber is assigned to temporaryVariable
+		temporaryVariable = firstNumber;
+
+		// Value of secondNumber is assigned to firstNumber
+		firstNumber = secondNumber;
+
+		// Value of temporaryVariable (which contains the initial value of firstNumber) is assigned to secondNumber
+		secondNumber = temporaryVariable;
+
+		System.out.printf("\nAfter swapping, firstNumber = %.2f\n", firstNumber);
+		System.out.printf("After swapping, secondNumber = %.2f", secondNumber);
+	}
+
+}
+      </code>
+      <out>
+Enter first number: 1.20
+Enter second number: 2.45
+
+After swapping, firstNumber = 2.45
+After swapping, secondNumber = 1.20
+      </out>
+    </java_lang>
+  </content>
+
+  <content id="4">
+    <title>Swap Numbers Without Using Temporary Variables</title>
+    <desc>
+This example contains to swap numbers the program doesn't use temporary variables to swap two variables.
+    </desc>
+    <c_lang>
+      <code>
+#include &lt;stdio.h&gt;
+int main()
+{
+    double firstNumber, secondNumber;
+
+    printf("Enter first number: ");
+    scanf("%lf", &amp;firstNumber);
+
+    printf("Enter second number: ");
+    scanf("%lf",&amp;secondNumber);
+
+    // Swapping process
+
+    firstNumber = firstNumber - secondNumber;
+    secondNumber = firstNumber + secondNumber;
+    firstNumber = secondNumber - firstNumber;
+
+    printf("\nAfter swapping, firstNumber = %.2lf\n", firstNumber);
+    printf("After swapping, secondNumber = %.2lf", secondNumber);
+
+    return 0;
+}
+
+      </code>
+      <out>
+Enter first number: 10.25
+Enter second number: -12.5
+
+After swapping, firstNumber = -12.50
+After swapping, secondNumber = 10.25
+      </out>
+    </c_lang>
+    <cpp_lang>
+      <code>
+#include &lt;iostream&gt;
+using namespace std;
+
+int main()
+{
+    
+    int a = 5, b = 10;
+
+    cout &lt;&lt; "Before swapping." &lt;&lt; endl;
+    cout &lt;&lt; "a = " &lt;&lt; a &lt;&lt; ", b = " &lt;&lt; b &lt;&lt; endl;
+
+    a = a + b;
+    b = a - b;
+    a = a - b;
+
+    cout &lt;&lt; "\nAfter swapping." &lt;&lt; endl;
+    cout &lt;&lt; "a = " &lt;&lt; a &lt;&lt; ", b = " &lt;&lt; b &lt;&lt; endl;
+
+    return 0;
+}
+      </code>
+      <out>
+Before swapping.
+a = 5, b = 10
+
+After swapping.
+a = 10, b = 5
+      </out>
+    </cpp_lang>
+    <java_lang>
+      <code>
+
+import java.util.Scanner;
+
+public class Swap {
+
+	public final static Scanner STDIN_SCANNER = new Scanner(System.in);
+	public static void main(String[] args) {
+		double firstNumber, secondNumber;
+
+		System.out.print("Enter first number: ");
+		firstNumber = STDIN_SCANNER.nextDouble();
+
+		System.out.print("Enter second number: ");
+		secondNumber = STDIN_SCANNER.nextDouble();
+
+		// Swapping process
+
+		firstNumber = firstNumber - secondNumber;
+		secondNumber = firstNumber + secondNumber;
+		firstNumber = secondNumber - firstNumber;
+
+		System.out.printf("\nAfter swapping, firstNumber = %.2f\n", firstNumber);
+		System.out.printf("After swapping, secondNumber = %.2f", secondNumber);
+	}
+
+	
+}
+      </code>
+      <out>
+Enter first number: 10.25
+Enter second number: -12.5
+
+After swapping, firstNumber = -12.50
+After swapping, secondNumber = 10.25
+      </out>
+    </java_lang>
+  </content>
+
+  <content id="5">
+    <title>Check Whether a Number is Even or Odd</title>
+    <desc>In this example, if...else statement is used to check whether a number entered by the user is even or odd.&lt;br&gt;&lt;br&gt;
+Integers which are perfectly divisible by 2 are called even numbers.&lt;br&gt;&lt;br&gt;
+
+And those integers which are not perfectly divisible by 2 are not known as odd number.&lt;br&gt;&lt;br&gt;
+
+To check whether an integer is even or odd, the remainder is calculated when it is divided by 2 using modulus operator %. If remainder is zero, that integer is even if not that integer is odd.
+    An even number is an integer that is exactly divisible by 2. Example: 0, 8, -24&lt;br&gt;&lt;br&gt;
+An odd number is an integer that is not exactly divisible by 2. Example: 1, 7, -11, 15&lt;br&gt;&lt;br&gt;
+
+    </desc>
+    <c_lang>
+      <code>
+#include &lt;stdio.h&gt;
+int main()
+{
+    int number;
+
+    printf("Enter an integer: ");
+    scanf("%d", &amp;number);
+
+    // True if the number is perfectly divisible by 2
+    if(number % 2 == 0)
+        printf("%d is even.", number);
+    else
+        printf("%d is odd.", number);
+
+    return 0;
+}
+      </code>
+      <out>
+Enter an integer: 7
+7 is odd.
+      </out>
+    </c_lang>
+    <cpp_lang>
+      <code>
+#include &lt;iostream&gt;
+using namespace std;
+
+int main()
+{
+    int n;
+
+    cout &lt;&lt; "Enter an integer: ";
+    cin &gt;&gt; n;
+
+    if ( n % 2 == 0)
+        cout &lt;&lt; n &lt;&lt; " is even.";
+    else
+        cout &lt;&lt; n &lt;&lt; " is odd.";
+
+    return 0;
+}
+      </code>
+      <out>
+Enter an integer: 24
+24 is even.
+      </out>
+    </cpp_lang>
+    <java_lang>
+      <code>
+import java.util.Scanner;
+
+public class evenOdd {
+	public final static Scanner STDIN_SCANNER = new Scanner(System.in);
+	public static void main(String[] args) {
+		int number;
+
+		System.out.print("Enter an integer: ");
+		number = STDIN_SCANNER.nextInt();
+
+		// True if the number is perfectly divisible by 2
+		if(number % 2 == 0) {
+			System.out.print(number + " is even.");
+		} else {
+			System.out.print(number + " is odd.");
+		}
+	}
+
+
+}
+      </code>
+      <out>
+Enter an integer: 24
+24 is even.
+      </out>
+    </java_lang>
+  </content>
+
+  <content id="6">
+    <title>Check Whether a character is Vowel or Consonant</title>
+    <desc>
+In this example, if...else statement is used to check whether an alphabet entered by the user is a vowel or a constant.&lt;br&gt;&lt;br&gt;
+The five alphabets A, E, I, O and U are called vowels. All other alphabets except these 5 vowel letters are called consonants.&lt;br&gt;
+
+This program assumes that the user will always enter an alphabet character.
+    </desc>
+    <c_lang>
+      <code>
+#include &lt;stdio.h&gt;
+int main()
+{
+    char c;
+    int isLowercaseVowel, isUppercaseVowel;
+
+    printf("Enter an alphabet: ");
+    scanf("%c",&amp;c);
+
+    // evaluates to 1 (true) if c is a lowercase vowel
+    isLowercaseVowel = (c == 'a' || c == 'e' || c == 'i' || c == 'o' || c == 'u');
+
+    // evaluates to 1 (true) if c is an uppercase vowel
+    isUppercaseVowel = (c == 'A' || c == 'E' || c == 'I' || c == 'O' || c == 'U');
+
+    // evaluates to 1 (true) if either isLowercaseVowel or isUppercaseVowel is true
+    if (isLowercaseVowel || isUppercaseVowel)
+        printf("%c is a vowel.", c);
+    else
+        printf("%c is a consonant.", c);
+    return 0;
+}
+      </code>
+      <out>
+Enter an alphabet: G
+G is a consonant.
+      </out>
+    </c_lang>
+    <cpp_lang>
+      <code>
+#include &lt;iostream&gt;
+using namespace std;
+
+int main()
+{
+    char c;
+    int isLowercaseVowel, isUppercaseVowel;
+
+    cout &lt;&lt; "Enter an alphabet: ";
+    cin &gt;&gt; c;
+
+    // evaluates to 1 (true) if c is a lowercase vowel
+    isLowercaseVowel = (c == 'a' || c == 'e' || c == 'i' || c == 'o' || c == 'u');
+
+    // evaluates to 1 (true) if c is an uppercase vowel
+    isUppercaseVowel = (c == 'A' || c == 'E' || c == 'I' || c == 'O' || c == 'U');
+
+    // evaluates to 1 (true) if either isLowercaseVowel or isUppercaseVowel is true
+    if (isLowercaseVowel || isUppercaseVowel)
+        cout &lt;&lt; c &lt;&lt; " is a vowel.";
+    else
+        cout &lt;&lt; c &lt;&lt; " is a consonant.";
+
+    return 0;
+}
+      </code>
+      <out>
+Enter an alphabet: u
+u is a vowel.
+      </out>
+    </cpp_lang>
+    <java_lang>
+      <code>
+package demo;
+
+import java.util.Scanner;
+
+public class vowel {
+
+	public final static Scanner STDIN_SCANNER = new Scanner(System.in);
+	public static void main(String[] args) {
+		byte c;
+		boolean isLowercaseVowel, isUppercaseVowel;
+
+		System.out.print("Enter an alphabet: ");
+		c = (byte)nextChar(STDIN_SCANNER);
+
+		// evaluates to 1 (true) if c is a lowercase vowel
+		isLowercaseVowel = c == 'a' || c == 'e' || c == 'i' || c == 'o' || c == 'u';
+
+		// evaluates to 1 (true) if c is an uppercase vowel
+		isUppercaseVowel = c == 'A' || c == 'E' || c == 'I' || c == 'O' || c == 'U';
+
+		// evaluates to 1 (true) if either isLowercaseVowel or isUppercaseVowel is true
+		if(isLowercaseVowel || isUppercaseVowel) {
+			System.out.print(((char)Byte.toUnsignedInt(c)) + " is a vowel.");
+		} else {
+			System.out.print(((char)Byte.toUnsignedInt(c)) + " is a consonant.");
+		}
+	}
+
+
+	/**
+	 * This method is missing from the Scanner interface.
+	 */
+	public final static int nextChar(Scanner scanner) {
+		scanner.useDelimiter("");
+		int ret = scanner.next().charAt(0);
+		scanner.reset();
+		return ret;
+	}
+}
+      </code>
+      <out>
+Enter an alphabet: G
+G is a consonant.
+      </out>
+    </java_lang>
+  </content>
+
+  <content id="7">
+    <title>Largest Number Among Three Numbers</title>
+    <desc>In this example, the largest number among three numbers (entered by the user) is found using three different methods.&lt;br&gt;
+    In this program, user is asked to enter three numbers.&lt;br&gt;&lt;br&gt;
+
+Then this program finds out the largest number among three numbers entered by user and displays it with proper message.&lt;br&gt;&lt;br&gt;
+
+This program can be used in more than one way.&lt;br&gt;&lt;br&gt;
+    </desc>
+    <c_lang>
+      <code>
+#include &lt;stdio.h&gt;
+int main()
+{
+    double n1, n2, n3;
+
+    printf("Enter three different numbers: ");
+    scanf("%lf %lf %lf", &amp;n1, &amp;n2, &amp;n3);
+
+    if( n1&gt;=n2 &amp;&amp; n1&gt;=n3 )
+        printf("%.2f is the largest number.", n1);
+
+    if( n2&gt;=n1 &amp;&amp; n2&gt;=n3 )
+        printf("%.2f is the largest number.", n2);
+
+    if( n3&gt;=n1 &amp;&amp; n3&gt;=n2 )
+        printf("%.2f is the largest number.", n3);
+
+    return 0;
+}
+      </code>
+      <out>
+Enter three numbers: -4.5
+3.9
+5.6
+5.60 is the largest number.
+      </out>
+    </c_lang>
+    <cpp_lang>
+      <code>
+#include &lt;iostream&gt;
+using namespace std;
+
+int main()
+{    
+    float n1, n2, n3;
+
+    cout &lt;&lt; "Enter three numbers: ";
+    cin &gt;&gt; n1 &gt;&gt; n2 &gt;&gt; n3;
+
+    if(n1 &gt;= n2 &amp;&amp; n1 &gt;= n3)
+    {
+        cout &lt;&lt; "Largest number: " &lt;&lt; n1;
+    }
+
+    if(n2 &gt;= n1 &amp;&amp; n2 &gt;= n3)
+    {
+        cout &lt;&lt; "Largest number: " &lt;&lt; n2;
+    }
+
+    if(n3 &gt;= n1 &amp;&amp; n3 &gt;= n2) {
+        cout &lt;&lt; "Largest number: " &lt;&lt; n3;
+    }
+
+    return 0;
+}
+      </code>
+      <out>
+Enter three numbers: 2.3
+8.3
+-4.2
+Largest number: 8.3
+      </out>
+    </cpp_lang>
+    <java_lang>
+      <code>
+
+import java.util.Scanner;
+
+public class LargeNumber {
+	public static void main(String[] args) {
+		double n1, n2, n3;
+
+		System.out.print("Enter three different numbers: ");
+		n1 = STDIN_SCANNER.nextDouble();
+		n2 = STDIN_SCANNER.nextDouble();
+		n3 = STDIN_SCANNER.nextDouble();
+
+		if(n1 &gt;= n2 &amp;&amp; n1 &gt;= n3) {
+			System.out.printf("%.2f is the largest number.", n1);
+		}
+
+		if(n2 &gt;= n1 &amp;&amp; n2 &gt;= n3) {
+			System.out.printf("%.2f is the largest number.", n2);
+		}
+
+		if(n3 &gt;= n1 &amp;&amp; n3 &gt;= n2) {
+			System.out.printf("%.2f is the largest number.", n3);
+		}
+	}
+
+	public final static Scanner STDIN_SCANNER = new Scanner(System.in);
+}
+      </code>
+      <out>
+Enter three numbers: -4.5
+3.9
+5.6
+5.60 is the largest number.
+      </out>
+    </java_lang>
+  </content>
+
+  <content id="8">
+    <title>Repet of 7</title>
+    <desc>Repet of 7</desc>
+    <c_lang>
+      <code>
+#include &lt;stdio.h&gt;
+int main()
+{
+    double n1, n2, n3;
+
+    printf("Enter three numbers: ");
+    scanf("%lf %lf %lf", &amp;n1, &amp;n2, &amp;n3);
+
+    if (n1&gt;=n2)
+    {
+        if(n1&gt;=n3)
+            printf("%.2lf is the largest number.", n1);
+        else
+            printf("%.2lf is the largest number.", n3);
+    }
+    else
+    {
+        if(n2&gt;=n3)
+            printf("%.2lf is the largest number.", n2);
+        else
+            printf("%.2lf is the largest number.",n3);
+    }
+    
+    return 0;
+}
+      </code>
+      <out>
+Enter three numbers: -4.5
+3.9
+5.6
+5.60 is the largest number.
+      </out>
+    </c_lang>
+    <cpp_lang>
+      <code>
+#include &lt;iostream&gt;
+using namespace std;
+
+int main()
+{
+    float n1, n2, n3;
+
+    cout &lt;&lt; "Enter three numbers: ";
+    cin &gt;&gt; n1 &gt;&gt; n2 &gt;&gt; n3;
+
+    if (n1 &gt;= n2)
+    {
+        if (n1 &gt;= n3)
+            cout &lt;&lt; "Largest number: " &lt;&lt; n1;
+        else
+            cout &lt;&lt; "Largest number: " &lt;&lt; n3;
+    }
+    else
+    {
+        if (n2 &gt;= n3)
+            cout &lt;&lt; "Largest number: " &lt;&lt; n2;
+        else
+            cout &lt;&lt; "Largest number: " &lt;&lt; n3;
+    }
+
+    return 0;
+}
+      </code>
+      <out>
+Enter three numbers: 2.3
+8.3
+-4.2
+Largest number: 8.3
+      </out>
+    </cpp_lang>
+    <java_lang>
+      <code>
+import java.util.Scanner;
+
+public class LargerNumber {
+	public final static Scanner STDIN_SCANNER = new Scanner(System.in);
+	public static void main(String[] args) {
+		double n1, n2, n3;
+
+		System.out.print("Enter three numbers: ");
+		n1 = STDIN_SCANNER.nextDouble();
+		n2 = STDIN_SCANNER.nextDouble();
+		n3 = STDIN_SCANNER.nextDouble();
+
+		if(n1 &gt;= n2) {
+			if(n1 &gt;= n3) {
+				System.out.printf("%.2f is the largest number.", n1);
+			} else {
+				System.out.printf("%.2f is the largest number.", n3);
+			}
+		} else if(n2 &gt;= n3) {
+			System.out.printf("%.2f is the largest number.", n2);
+		} else {
+			System.out.printf("%.2f is the largest number.", n3);
+		}
+	}
+
+
+}
+      </code>
+      <out>
+Enter three numbers: -4.5
+3.9
+5.6
+5.60 is the largest number.
+      </out>
+    </java_lang>
+  </content>
+
+  <content id="9">
+    <title>Check Leap Year</title>
+    <desc>
+All years which are perfectly divisible by 4 are leap years except for century years (years ending with 00) which is leap year only it is perfectly divisible by 400.&lt;br&gt;&lt;br&gt;
+
+For example: 2012, 2004, 1968 etc are leap year but, 1971, 2006 etc are not leap year. Similarly, 1200, 1600, 2000, 2400 are leap years but, 1700, 1800, 1900 etc are not.&lt;br&gt;&lt;br&gt;
+
+In this program below, user is asked to enter a year and this program checks whether the year entered by user is leap year or not.
+    </desc>
+    <c_lang>
+      <code>
+#include &lt;stdio.h&gt;
+
+int main()
+{
+    int year;
+
+    printf("Enter a year: ");
+    scanf("%d",&amp;year);
+
+    if(year%4 == 0)
+    {
+        if( year%100 == 0)
+        {
+            // year is divisible by 400, hence the year is a leap year
+            if ( year%400 == 0)
+                printf("%d is a leap year.", year);
+            else
+                printf("%d is not a leap year.", year);
+        }
+        else
+            printf("%d is a leap year.", year );
+    }
+    else
+        printf("%d is not a leap year.", year);
+    
+    return 0;
+}
+      </code>
+      <out>
+#Output 1
+Enter a year: 1900
+1900 is not a leap year.
+
+#Output 2
+Enter a year: 2012
+2012 is a leap year.
+      </out>
+    </c_lang>
+    <cpp_lang>
+      <code>
+#include &lt;iostream&gt;
+using namespace std;
+
+int main()
+{
+    int year;
+
+    cout &lt;&lt; "Enter a year: ";
+    cin &gt;&gt; year;
+
+    if (year % 4 == 0)
+    {
+        if (year % 100 == 0)
+        {
+            if (year % 400 == 0)
+                cout &lt;&lt; year &lt;&lt; " is a leap year.";
+            else
+                cout &lt;&lt; year &lt;&lt; " is not a leap year.";
+        }
+        else
+            cout &lt;&lt; year &lt;&lt; " is a leap year.";
+    }
+    else
+        cout &lt;&lt; year &lt;&lt; " is not a leap year.";
+
+    return 0;
+}
+      </code>
+      <out>
+#Output 1
+Enter a year: 1900
+1900 is not a leap year.
+
+#Output 2
+Enter a year: 2012
+2012 is a leap year.
+      </out>
+    </cpp_lang>
+    <java_lang>
+      <code>
+import java.util.Scanner;
+
+public class LeapYear {
+
+  public final static Scanner STDIN_SCANNER = new Scanner(System.in);
+  
+	public static void main(String[] args) {
+		int year;
+
+		System.out.print("Enter a year: ");
+		year = STDIN_SCANNER.nextInt();
+
+		if(year % 4 == 0) {
+			if(year % 100 == 0) {
+				// year is divisible by 400, hence the year is a leap year
+				if(year % 400 == 0) {
+					System.out.print(year + " is a leap year.");
+				} else {
+					System.out.print(year + " is not a leap year.");
+				}
+			} else {
+				System.out.print(year + " is a leap year.");
+			}
+		} else {
+			System.out.print(year + " is not a leap year.");
+		}
+	}
+
+	
+}
+      </code>
+      <out>
+#Output 1
+Enter a year: 1900
+1900 is not a leap year.
+
+#Output 2
+Enter a year: 2012
+2012 is a leap year.
+      </out>
+    </java_lang>
+  </content>
+
+  <content id="1">
+    <title>Title here 2</title>
+    <desc>Description here</desc>
+    <c_lang>
+      <code>C Code here</code>
+      <out>C output here</out>
+    </c_lang>
+    <cpp_lang>
+      <code>C++ Code here</code>
+      <out>C++ output here</out>
+    </cpp_lang>
+    <java_lang>
+      <code>Java Code here</code>
+      <out>Java output here</out>
+    </java_lang>
+  </content>
+
+  <content id="1">
+    <title>Title here 2</title>
+    <desc>Description here</desc>
+    <c_lang>
+      <code>C Code here</code>
+      <out>C output here</out>
+    </c_lang>
+    <cpp_lang>
+      <code>C++ Code here</code>
+      <out>C++ output here</out>
+    </cpp_lang>
+    <java_lang>
+      <code>Java Code here</code>
+      <out>Java output here</out>
+    </java_lang>
+  </content>
+
+  <content id="1">
+    <title>Title here 2</title>
+    <desc>Description here</desc>
+    <c_lang>
+      <code>C Code here</code>
+      <out>C output here</out>
+    </c_lang>
+    <cpp_lang>
+      <code>C++ Code here</code>
+      <out>C++ output here</out>
+    </cpp_lang>
+    <java_lang>
+      <code>Java Code here</code>
+      <out>Java output here</out>
+    </java_lang>
+  </content>
+
+  <content id="1">
+    <title>Title here 2</title>
+    <desc>Description here</desc>
+    <c_lang>
+      <code>C Code here</code>
+      <out>C output here</out>
+    </c_lang>
+    <cpp_lang>
+      <code>C++ Code here</code>
+      <out>C++ output here</out>
+    </cpp_lang>
+    <java_lang>
+      <code>Java Code here</code>
+      <out>Java output here</out>
+    </java_lang>
+  </content>
+
+  <content id="1">
+    <title>Title here 2</title>
+    <desc>Description here</desc>
+    <c_lang>
+      <code>C Code here</code>
+      <out>C output here</out>
+    </c_lang>
+    <cpp_lang>
+      <code>C++ Code here</code>
+      <out>C++ output here</out>
+    </cpp_lang>
+    <java_lang>
+      <code>Java Code here</code>
+      <out>Java output here</out>
+    </java_lang>
+  </content>
+
+  <content id="1">
+    <title>Title here 2</title>
+    <desc>Description here</desc>
+    <c_lang>
+      <code>C Code here</code>
+      <out>C output here</out>
+    </c_lang>
+    <cpp_lang>
+      <code>C++ Code here</code>
+      <out>C++ output here</out>
+    </cpp_lang>
+    <java_lang>
+      <code>Java Code here</code>
+      <out>Java output here</out>
+    </java_lang>
+  </content>
+
+  <content id="1">
+    <title>Title here 2</title>
+    <desc>Description here</desc>
+    <c_lang>
+      <code>C Code here</code>
+      <out>C output here</out>
+    </c_lang>
+    <cpp_lang>
+      <code>C++ Code here</code>
+      <out>C++ output here</out>
+    </cpp_lang>
+    <java_lang>
+      <code>Java Code here</code>
+      <out>Java output here</out>
+    </java_lang>
+  </content>
+
+  <content id="1">
+    <title>Title here 2</title>
+    <desc>Description here</desc>
+    <c_lang>
+      <code>C Code here</code>
+      <out>C output here</out>
+    </c_lang>
+    <cpp_lang>
+      <code>C++ Code here</code>
+      <out>C++ output here</out>
+    </cpp_lang>
+    <java_lang>
+      <code>Java Code here</code>
+      <out>Java output here</out>
+    </java_lang>
+  </content>
+
+  <content id="1">
+    <title>Title here 2</title>
+    <desc>Description here</desc>
+    <c_lang>
+      <code>C Code here</code>
+      <out>C output here</out>
+    </c_lang>
+    <cpp_lang>
+      <code>C++ Code here</code>
+      <out>C++ output here</out>
+    </cpp_lang>
+    <java_lang>
+      <code>Java Code here</code>
+      <out>Java output here</out>
+    </java_lang>
+  </content>
+
+  <content id="1">
+    <title>Title here 2</title>
+    <desc>Description here</desc>
+    <c_lang>
+      <code>C Code here</code>
+      <out>C output here</out>
+    </c_lang>
+    <cpp_lang>
+      <code>C++ Code here</code>
+      <out>C++ output here</out>
+    </cpp_lang>
+    <java_lang>
+      <code>Java Code here</code>
+      <out>Java output here</out>
+    </java_lang>
+  </content>
+
+  <content id="1">
+    <title>Title here 2</title>
+    <desc>Description here</desc>
+    <c_lang>
+      <code>C Code here</code>
+      <out>C output here</out>
+    </c_lang>
+    <cpp_lang>
+      <code>C++ Code here</code>
+      <out>C++ output here</out>
+    </cpp_lang>
+    <java_lang>
+      <code>Java Code here</code>
+      <out>Java output here</out>
+    </java_lang>
+  </content>
+
+  <content id="1">
+    <title>Title here 2</title>
+    <desc>Description here</desc>
+    <c_lang>
+      <code>C Code here</code>
+      <out>C output here</out>
+    </c_lang>
+    <cpp_lang>
+      <code>C++ Code here</code>
+      <out>C++ output here</out>
+    </cpp_lang>
+    <java_lang>
+      <code>Java Code here</code>
+      <out>Java output here</out>
+    </java_lang>
+  </content>
+
+  <content id="1">
+    <title>Title here 2</title>
+    <desc>Description here</desc>
+    <c_lang>
+      <code>C Code here</code>
+      <out>C output here</out>
+    </c_lang>
+    <cpp_lang>
+      <code>C++ Code here</code>
+      <out>C++ output here</out>
+    </cpp_lang>
+    <java_lang>
+      <code>Java Code here</code>
+      <out>Java output here</out>
+    </java_lang>
+  </content>
+
+  <content id="1">
+    <title>Title here 2</title>
+    <desc>Description here</desc>
+    <c_lang>
+      <code>C Code here</code>
+      <out>C output here</out>
+    </c_lang>
+    <cpp_lang>
+      <code>C++ Code here</code>
+      <out>C++ output here</out>
+    </cpp_lang>
+    <java_lang>
+      <code>Java Code here</code>
+      <out>Java output here</out>
+    </java_lang>
+  </content>
+
+  <content id="1">
+    <title>Title here 2</title>
+    <desc>Description here</desc>
+    <c_lang>
+      <code>C Code here</code>
+      <out>C output here</out>
+    </c_lang>
+    <cpp_lang>
+      <code>C++ Code here</code>
+      <out>C++ output here</out>
+    </cpp_lang>
+    <java_lang>
+      <code>Java Code here</code>
+      <out>Java output here</out>
+    </java_lang>
+  </content>
+
+  <content id="1">
+    <title>Title here 2</title>
+    <desc>Description here</desc>
+    <c_lang>
+      <code>C Code here</code>
+      <out>C output here</out>
+    </c_lang>
+    <cpp_lang>
+      <code>C++ Code here</code>
+      <out>C++ output here</out>
+    </cpp_lang>
+    <java_lang>
+      <code>Java Code here</code>
+      <out>Java output here</out>
+    </java_lang>
+  </content>
+
+  <content id="1">
+    <title>Title here 2</title>
+    <desc>Description here</desc>
+    <c_lang>
+      <code>C Code here</code>
+      <out>C output here</out>
+    </c_lang>
+    <cpp_lang>
+      <code>C++ Code here</code>
+      <out>C++ output here</out>
+    </cpp_lang>
+    <java_lang>
+      <code>Java Code here</code>
+      <out>Java output here</out>
+    </java_lang>
+  </content>
+
+  <content id="1">
+    <title>Title here 2</title>
+    <desc>Description here</desc>
+    <c_lang>
+      <code>C Code here</code>
+      <out>C output here</out>
+    </c_lang>
+    <cpp_lang>
+      <code>C++ Code here</code>
+      <out>C++ output here</out>
+    </cpp_lang>
+    <java_lang>
+      <code>Java Code here</code>
+      <out>Java output here</out>
+    </java_lang>
+  </content>
+
+  <content id="1">
+    <title>Title here 2</title>
+    <desc>Description here</desc>
+    <c_lang>
+      <code>C Code here</code>
+      <out>C output here</out>
+    </c_lang>
+    <cpp_lang>
+      <code>C++ Code here</code>
+      <out>C++ output here</out>
+    </cpp_lang>
+    <java_lang>
+      <code>Java Code here</code>
+      <out>Java output here</out>
+    </java_lang>
+  </content>
+
+  <content id="1">
+    <title>Title here 2</title>
+    <desc>Description here</desc>
+    <c_lang>
+      <code>C Code here</code>
+      <out>C output here</out>
+    </c_lang>
+    <cpp_lang>
+      <code>C++ Code here</code>
+      <out>C++ output here</out>
+    </cpp_lang>
+    <java_lang>
+      <code>Java Code here</code>
+      <out>Java output here</out>
+    </java_lang>
+  </content>
+
+  <content id="1">
+    <title>Title here 2</title>
+    <desc>Description here</desc>
+    <c_lang>
+      <code>C Code here</code>
+      <out>C output here</out>
+    </c_lang>
+    <cpp_lang>
+      <code>C++ Code here</code>
+      <out>C++ output here</out>
+    </cpp_lang>
+    <java_lang>
+      <code>Java Code here</code>
+      <out>Java output here</out>
+    </java_lang>
+  </content>
+
+  <content id="1">
+    <title>Title here 2</title>
+    <desc>Description here</desc>
+    <c_lang>
+      <code>C Code here</code>
+      <out>C output here</out>
+    </c_lang>
+    <cpp_lang>
+      <code>C++ Code here</code>
+      <out>C++ output here</out>
+    </cpp_lang>
+    <java_lang>
+      <code>Java Code here</code>
+      <out>Java output here</out>
+    </java_lang>
+  </content>
+
+  <content id="1">
+    <title>Title here 2</title>
+    <desc>Description here</desc>
+    <c_lang>
+      <code>C Code here</code>
+      <out>C output here</out>
+    </c_lang>
+    <cpp_lang>
+      <code>C++ Code here</code>
+      <out>C++ output here</out>
+    </cpp_lang>
+    <java_lang>
+      <code>Java Code here</code>
+      <out>Java output here</out>
+    </java_lang>
+  </content>
+
+</document>

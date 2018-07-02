@@ -1,0 +1,93 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<document>
+
+  <content>
+    <title>Title here 1</title>
+    <desc>Description here</desc>
+    <c_lang>
+      <code>
+// C program to print first n Fibonacci numbers
+#include &lt;stdio.h&gt;
+
+// Function to print first n Fibonacci Numbers
+void printFibonacciNumbers(int n)
+{
+    int f1 = 0, f2 = 1, i;
+
+    if (n &lt; 1)
+        return;
+
+    for (i = 1; i &lt;= n; i++)
+    {
+        printf("%d ", f2);
+        int next = f1 + f2;
+        f1 = f2;
+        f2 = next;
+    }
+}
+
+// Driver Code
+int main()
+{
+    printFibonacciNumbers(7);
+    return 0;
+}
+      </code>
+      <out>C output here</out>
+    </c_lang>
+    <cpp_lang>
+      <code>
+// C++ program to print first n Fibonacci numbers
+#include &lt;stdio.h&gt;
+
+// Function to print first n Fibonacci Numbers
+void printFibonacciNumbers(int n)
+{
+    int f1 = 0, f2 = 1, i;
+
+    if (n &lt; 1)
+        return;
+
+    for (i = 1; i &lt;= n; i++)
+    {
+        printf("%d ", f2);
+        int next = f1 + f2;
+        f1 = f2;
+        f2 = next;
+    }
+}
+
+// Driver Code
+int main()
+{
+    printFibonacciNumbers(7);
+    return 0;
+}
+      </code>
+      <out>C++ output here</out>
+    </cpp_lang>
+    <java_lang>
+      <code>Java Code here</code>
+      <out>Java output here</out>
+    </java_lang>
+  </content>
+
+
+  <content>
+    <title>Title here 2</title>
+    <desc>Description here</desc>
+    <c_lang>
+      <code>C Code here</code>
+      <out>C output here</out>
+    </c_lang>
+    <cpp_lang>
+      <code>C++ Code here</code>
+      <out>C++ output here</out>
+    </cpp_lang>
+    <java_lang>
+      <code>Java Code here</code>
+      <out>Java output here</out>
+    </java_lang>
+  </content>
+
+</document>

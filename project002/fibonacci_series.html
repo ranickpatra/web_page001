@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <title>Fibonacci Series</title>
+    <meta charset="UTF-8">
+    <meta name="description" content="Write a program to display or show first n terms of fibonacci series in C, JAVA">
+    <meta name="keywords" content="fibonacci, series, terms, C, Java, any, language">
+    <meta name="author" content="Ranick Patra">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Bootstrap CSS CDN -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
+    <!-- Our Custom CSS -->
+    <link rel="stylesheet" href="styles/style_sidebar.css">
+
+    <!-- Font Awesome JS -->
+    <script defer src="https://use.fontawesome.com/releases/v5.0.13/js/solid.js" integrity="sha384-tzzSw1/Vo+0N5UhStP3bvwWPq+uvzCMfrN1fEFe+xBmv1C/AtVX5K0uZtmcHitFZ" crossorigin="anonymous"></script>
+    <script defer src="https://use.fontawesome.com/releases/v5.0.13/js/fontawesome.js" integrity="sha384-6OIrr52G08NpOFSZdxxz1xdNSndlD4vdcf/q2myIUVO0VsqaGHJsB0RaBE01VTOY" crossorigin="anonymous"></script>
+
+
+
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <meta charset="utf-8">
+    <!-- W3CSS SECTION -->
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <!-- BOOTSTRAP4 SECTION -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"></script>
+    <!-- syntax hiliting -->
+    <script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js"></script>
+
+    <link rel="stylesheet" href="./styles/style01.css">
+    <link rel="stylesheet" href="./styles/style02.css">
+
+    <script type="text/javascript" src="./javascript/script001.js"></script>
+
+
+
+
+</head>
+
+<body>
+    <div class="wrapper">
+        <!-- Sidebar  -->
+        <nav id="sidebar">
+            <div class="sidebar-header">
+                <h3 style="color: #fff">Code Project</h3>
+            </div>
+
+            <ul class="list-unstyled components">
+                <!--<p>Dummy Heading</p>-->
+                <li>
+                    <a href="./palindrome_string.html">PALINDROME PROGRAM</a>
+                </li>
+                <li class="active">
+                    <a href="#">FIBONACCI SERIES</a>
+                </li>
+                <li>
+                    <a href="./factorial_number.html">FACTORIAL NUMBER</a>
+                </li>
+                <li>
+                    <a href="./buble_sort.html">BUBLE SORT</a>
+                </li>
+                <li>
+                    <a href="./find_3rd_largest_number_inanarray.html">FIND 3RD LARGEST NUMBER IN AN ARRAY</a>
+                </li>
+            </ul>
+        </nav>
+
+        <!-- Page Content  -->
+        <div id="content">
+<!--
+            <nav class="navbar navbar-expand-lg navbar-light bg-light">
+                <div class="container-fluid">
+
+                    <button type="button" id="sidebarCollapse" class="btn btn-info">
+                        <i class="fas fa-align-left"></i>
+                        <span>Toggle Sidebar</span>
+                    </button>
+
+
+
+                </div> -->
+
+                <button type="button" id="sidebarCollapse" class="btn btn-info">
+                    <i class="fas fa-align-left"></i>
+                    <span>Toggle Sidebar</span>
+                </button>
+            </nav>
+
+
+          <div class="articles w3-large">
+            <div class="question"><h2>Program to print first n Fibonacci Numbers</h2></div><br>
+            <div class="description"><strong>Description</strong><br>
+                  &nbsp;&nbsp;&nbsp;&nbsp;In case of fibonacci series, next number is the sum of previous two numbers for example 0, 1, 1, 2, 3, 5, 8, 13, 21 etc. The first two numbers of fibonacci series are 0 and 1.</div>
+            <div class="code-container container mt-3">
+              <ul class="nav nav-tabs w3-border">
+                <li class="nav-item">
+                  <a class="nav-link active" data-toggle="tab" href="#c_lang_1">C</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" data-toggle="tab" href="#java_lang_1">JAVA</a>
+                </li>
+              </ul>
+
+              <!-- Tab panes -->
+              <div class="tab-content">
+                <div class="tab-pane active container" id="c_lang_1">
+                  <div class="code_area w3-light-grey">
+                  <pre id="code_containts">
+                    <code class="prettyprint devsite-code-highlight linenums">
+// C program to print first n Fibonacci numbers
+  #include &lt;stdio.h&gt;
+
+  // Function to print first n Fibonacci Numbers
+  void printFibonacciNumbers(int n)
+  {
+      int f1 = 0, f2 = 1, i;
+
+      if (n < 1)
+          return;
+
+      for (i = 1; i <= n; i++)
+      {
+          printf("%d ", f2);
+          int next = f1 + f2;
+          f1 = f2;
+          f2 = next;
+      }
+  }
+
+  // Driver Code
+  int main()
+  {
+      printFibonacciNumbers(7);
+      return 0;
+  }              </code>
+                  </pre>
+                </div>
+                  <div class="output w3-container w3-teal w3-pale-yellow w3-leftbar w3-border-yellow">
+                    <div class="output_head w3-large">OUTPUT</div>
+                    <div class="output_body w3-medium">
+                      1 1 2 3 5 8 13
+                    </div>
+                  </div>
+                </div>
+                <div class="tab-pane container" id="java_lang_1">
+                  <div class="code_area w3-light-grey">
+                  <pre id="code_containts">
+                    <code class="prettyprint lang-java linenums">
+// Java program to print first n Fibonacci Numbers
+
+class Test
+{
+    // Method to print first n Fibonacci Numbers
+    static void printFibonacciNumbers(int n)
+    {
+        int f1 = 0, f2 = 1, i;
+
+        if (n < 1)
+            return;
+
+        for (i = 1; i <= n; i++)
+        {
+            System.out.print(f2+" ");
+            int next = f1 + f2;
+            f1 = f2;
+            f2 = next;
+        }
+    }
+
+    // Driver Code
+    public static void main(String[] args)
+    {
+        printFibonacciNumbers(7);
+    }
+}
+
+                    </code>
+                  </pre>
+                </div>
+                  <div class="output w3-container w3-teal w3-pale-yellow w3-leftbar w3-border-yellow">
+                    <div class="output_head w3-large">OUTPUT</div>
+                    <div class="output_body w3-medium">
+                      1 1 2 3 5 8 13
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+
+            </div>
+          </div>
+
+
+
+
+
+
+        </div>
+    </div>
+
+    <!-- jQuery CDN - Slim version (=without AJAX) -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <!-- Popper.JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js" integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ" crossorigin="anonymous"></script>
+    <!-- Bootstrap JS -->
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js" integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm" crossorigin="anonymous"></script>
+
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $('#sidebarCollapse').on('click', function () {
+                $('#sidebar').toggleClass('active');
+            });
+        });
+    </script>
+</body>
+
+</html>
